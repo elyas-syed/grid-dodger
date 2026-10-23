@@ -4,7 +4,7 @@
 
 [Watch the demo](https://elyas-syed.github.io/grid-dodger/#demo) · [Read the build story](docs/grid-dodger-article/ARTICLE.md) · [Reuse the decision pattern](docs/DECIDER_PATTERN.md) · [Benchmark results](benchmarks/results/REPORT.md)
 
-![Grid Dodger: Human, Decider, and Shadow modes](docs/grid-dodger-article/assets/game-overview.png)
+![Grid Dodger gameplay: Decider pilots the ship past falling asteroids and enemy fighters, with move details alongside the board.](docs/images/grid-dodger-gameplay.png)
 
 ## Play locally
 
