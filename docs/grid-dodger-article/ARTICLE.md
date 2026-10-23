@@ -1,6 +1,6 @@
 # 2B or Not 2B? Building Grid Dodger with Strands Decider 2B
 
-**By Elyas Syed · October 23, 2026**  
+**By Elyas Syed · October 23, 2026**
 *Tool selection · #strands-decider-2b #tool-selection*
 
 ![2B or Not 2B? Building Grid Dodger with Strands Decider 2B. GRID DODGER above a spacecraft banking through a neon grid and asteroids. Concept illustration. By Elyas Syed.](assets/article-cover-high-resolution.png)
