@@ -1,0 +1,22 @@
+{
+  "build": "AWS CodeBuild, fresh project and empty ECR repository",
+  "buildId": "grid-dodger-decider-image:ca5d4adb-35c5-4636-aada-3bf6428d108e",
+  "startedAt": "2026-10-16T20:03:04.394-05:00",
+  "completedAt": "2026-10-16T20:08:32.475-05:00",
+  "durationSeconds": 328.081,
+  "baseImage": "pytorch/pytorch:2.7.1-cuda12.6-cudnn9-runtime",
+  "pullBaseImage": true,
+  "dockerNoCache": true,
+  "imageDigest": "sha256:08bc86e590604b97041d6ddf72f02c6fe9aeb91565fd67e265332e7e4d916095",
+  "compressedImageBytes": 3425054894,
+  "versions": {
+    "strands-decider": "0.1.0",
+    "torch": "2.7.1+cu126",
+    "transformers": "5.20.1",
+    "peft": "0.21.2",
+    "accelerate": "1.15.0",
+    "fastapi": "0.143.3",
+    "uvicorn": "0.54.0"
+  },
+  "limitations": "HF checkpoint identifier is recorded by server health; its underlying repository revision is not pinned. The dependency fingerprint is not a portable pip lockfile."
+}

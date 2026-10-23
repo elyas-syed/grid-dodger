@@ -1,0 +1,24 @@
+version: 0.2
+
+# Builds Dockerfile.gpu and pushes to ECR. Runs on CodeBuild (not your Mac).
+phases:
+  pre_build:
+    commands:
+      - echo "Logging in to Amazon ECR..."
+      - aws ecr get-login-password --region "$AWS_DEFAULT_REGION" | docker login --username AWS --password-stdin "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com"
+      - IMAGE_URI="$ECR_REPOSITORY_URI:$IMAGE_TAG"
+      - echo "IMAGE_URI=$IMAGE_URI"
+  build:
+    commands:
+      - echo "Building Decider CUDA image..."
+      - docker build --pull --no-cache --platform linux/amd64 -f Dockerfile.gpu -t "$IMAGE_URI" .
+      - docker run --rm --entrypoint python "$IMAGE_URI" -m pip freeze
+  post_build:
+    commands:
+      - echo "Pushing $IMAGE_URI"
+      - docker push "$IMAGE_URI"
+      - printf '{"imageUri":"%s"}' "$IMAGE_URI" > imageDetail.json
+
+artifacts:
+  files:
+    - imageDetail.json

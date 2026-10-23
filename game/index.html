@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#090e16" />
+    <meta
+      name="description"
+      content="Your instincts. An AI copilot. One grid. Play Grid Dodger: a space arcade powered by Strands Decider and Amazon Bedrock."
+    />
+    <title>Grid Dodger — The AI Arcade</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./embed.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#flight-deck">Skip to game</a>
+    <main class="wrap">
+      <div class="site-header">
+        <header class="masthead">
+          <h1 class="brand">
+            <img
+              class="brand-logo"
+              src="./assets/brand/grid-dodger-logo.png"
+              alt="Grid Dodger"
+              width="2172"
+              height="724"
+            />
+          </h1>
+          <div class="masthead-meta">
+            <span class="edition"
+              ><span class="spark" aria-hidden="true">✦</span> THE AI
+              ARCADE</span
+            >
+            <span class="creator-credit">
+              <a
+                class="github-link"
+                href="https://github.com/elyas-syed"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Elyas Syed on GitHub (opens in a new tab)"
+              >
+                <svg
+                  class="github-icon"
+                  viewBox="0 0 16 16"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
+                  />
+                </svg>
+                <span>Elyas Syed</span>
+              </a>
+            </span>
+            <label class="mute-toggle"
+              ><input id="mute" type="checkbox" /> Mute audio</label
+            >
+          </div>
+        </header>
+
+        <aside id="launch-warning" role="alert" hidden>
+          <p>
+            <strong
+              >Open the game through a web server to use Decider and
+              Bedrock.</strong
+            >
+          </p>
+          <p>
+            Opening this HTML file directly cannot connect to the game services.
+          </p>
+          <p>
+            <a href="http://127.0.0.1:8080/game/" data-hosted-game-link
+              >Open the game server</a
+            >
+          </p>
+          <p>
+            For local development, run <code>npm run serve</code> and open
+            <a href="http://127.0.0.1:8080/game/">the local game server</a>.
+          </p>
+        </aside>
+
+        <section class="intro" aria-labelledby="arcade-title">
+          <div>
+            <p class="eyebrow">HUMAN INSTINCT. MACHINE DECISIONS.</p>
+            <h2 id="arcade-title">Stay sharp. <span>Dodge the Grid.</span></h2>
+            <p class="lede">
+              Take the controls, follow a copilot, or let Strands Decider 2B
+              fly.
+            </p>
+          </div>
+          <div class="mission-tag">
+            <span class="orbit" aria-hidden="true">✧</span>
+            <div><strong>500</strong><span>POINTS TO VICTORY</span></div>
+          </div>
+        </section>
+      </div>
+
+      <div class="arcade-layout">
+        <section
+          class="arena panel"
+          id="flight-deck"
+          tabindex="-1"
+          aria-labelledby="deck-title"
+        >
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">01 / PLAY</p>
+              <h2 id="deck-title">Flight deck</h2>
+            </div>
+            <span id="status" class="status-pill" role="status">ready</span>
+          </div>
+
+          <div class="flight-controls">
+            <select id="mode" hidden aria-label="Mode">
+              <option value="human">human</option>
+              <option value="decider">decider</option>
+              <option value="shadow">shadow</option>
+            </select>
+            <div class="mode-tabs" role="group" aria-label="Choose your pilot">
+              <button type="button" id="mode-human" aria-pressed="true">
+                <span class="mode-icon" aria-hidden="true">↔</span>Human<span
+                  class="mode-caption"
+                  >You fly</span
+                >
+              </button>
+              <button type="button" id="mode-decider" aria-pressed="false">
+                <span class="mode-icon" aria-hidden="true">✦</span>Decider<span
+                  class="mode-caption"
+                  >AI flies</span
+                >
+              </button>
+              <button type="button" id="mode-shadow" aria-pressed="false">
+                <span class="mode-icon" aria-hidden="true">◈</span>Shadow<span
+                  class="mode-caption"
+                  >AI guides</span
+                >
+              </button>
+            </div>
+            <p id="mode-help" class="mode-help">
+              Your ship. Your decisions. Dodge with the arrows or controls
+              below.
+            </p>
+
+            <div class="score-strip">
+              <div class="score-stat">
+                <span class="eyebrow">SCORE</span><strong id="score">0</strong>
+              </div>
+              <div class="mission-progress">
+                <div>
+                  <span>ROAD TO 500</span><span id="difficulty">Standard</span>
+                </div>
+                <progress
+                  id="goal-progress"
+                  max="500"
+                  value="0"
+                  aria-label="Progress toward 500 points"
+                ></progress>
+                <div class="milestones">
+                  <span>START</span><span>100 · RISING</span
+                  ><span>300 · HARD</span><span>400 · EXTREME</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="play-controls">
+              <button type="button" id="btn-start" class="cta">
+                <span id="start-label">Start</span>
+                <span aria-hidden="true">↗</span></button
+              ><button type="button" id="btn-pause" class="ghost" disabled>
+                Pause</button
+              ><button
+                type="button"
+                id="btn-stop"
+                class="ghost stop-button"
+                disabled
+              >
+                Stop</button
+              ><span class="keyboard-hint"><kbd>R</kbd> restart</span>
+            </div>
+          </div>
+          <div class="play-area">
+            <div class="stage">
+              <div class="stage-caption">
+                <span>SECTOR / 05 × 10</span
+                ><span class="stage-dot" id="shadow-cue"
+                  >YOU’RE IN CONTROL</span
+                >
+              </div>
+              <div class="board-frame">
+                <canvas
+                  id="board"
+                  width="320"
+                  height="520"
+                  aria-label="Grid Dodger board: five lanes, falling hazards, your ship at the bottom"
+                ></canvas>
+              </div>
+            </div>
+
+            <div class="touch-controls" role="group" aria-label="Ship movement">
+              <button
+                id="move-left"
+                type="button"
+                aria-label="Move left"
+                disabled
+              >
+                ← <span>LEFT</span></button
+              ><button
+                id="move-stay"
+                type="button"
+                aria-label="Stay in this lane"
+                disabled
+              >
+                ↓ <span>STAY</span></button
+              ><button
+                id="move-right"
+                type="button"
+                aria-label="Move right"
+                disabled
+              >
+                <span>RIGHT</span> →
+              </button>
+            </div>
+            <p class="input-hint">
+              <kbd>←</kbd> <kbd>→</kbd> or <kbd>A</kbd> <kbd>D</kbd> to dodge
+              <span>·</span> <kbd>SPACE</kbd> to stay
+            </p>
+          </div>
+        </section>
+
+        <aside class="side-stack" aria-label="Copilot and run information">
+          <section class="decision-card panel" aria-labelledby="decision-title">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">02 / THE COPILOT</p>
+                <h2 id="decision-title" tabindex="-1">Next move</h2>
+              </div>
+              <span class="tiny-icon" aria-hidden="true">◈</span>
+            </div>
+            <div class="action-display">
+              <span class="action-caption" id="action-caption"
+                >APPLIED MOVE / SHADOW SUGGESTION</span
+              ><strong id="move-label">—</strong>
+            </div>
+            <div class="telemetry">
+              <span id="source-label" class="source-pill">HTTP model</span
+              ><span class="decision-timing"
+                ><span>Decision time</span><br /><span id="latency"
+                  >—</span
+                ></span
+              >
+            </div>
+            <p id="decision-context" class="decision-context">
+              Waiting for a decision
+            </p>
+            <details class="model-details" open>
+              <summary>
+                How Decider chose this move <span aria-hidden="true">+</span>
+              </summary>
+              <div
+                class="model-details-body"
+                role="region"
+                aria-label="Model probability details"
+                tabindex="0"
+              >
+                <p id="option-probabilities">—</p>
+                <div id="model-metrics">
+                  <p class="metric-note">
+                    Decider compares Left, Stay, and Right. The percentages show
+                    its relative preference for each move, not your chance of
+                    surviving. The game engine checks safety separately.
+                  </p>
+                  <p class="decision-line">
+                    <strong>Model choice probability</strong
+                    ><span id="conf-label">—</span>
+                  </p>
+                  <div class="conf-bar" aria-hidden="true">
+                    <div id="conf-fill" class="conf-fill"></div>
+                  </div>
+                  <p class="decision-meta" id="decision-meta">—</p>
+                </div>
+              </div>
+            </details>
+          </section>
+
+          <section
+            class="recap-box panel"
+            aria-labelledby="recap-title"
+            aria-live="polite"
+          >
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">03 / THE DEBRIEF</p>
+                <h2 id="recap-title" tabindex="-1">Bedrock recap</h2>
+              </div>
+              <span class="tiny-icon" aria-hidden="true">✧</span>
+            </div>
+            <div id="recap-result" class="recap-result" hidden>
+              <strong id="recap-outcome"></strong>
+              <span>Score <strong id="recap-score"></strong></span>
+            </div>
+            <pre id="recap-text">
+Your story lands here. Stop, win, or finish a run for a recap with your score.</pre
+            >
+            <div class="recap-footer">
+              <span>Your run, narrated.</span
+              ><button
+                type="button"
+                id="btn-recap"
+                class="text-button"
+                disabled
+              >
+                Refresh recap ↗
+              </button>
+            </div>
+          </section>
+
+          <section class="recent-runs panel" aria-label="Recent scores">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">YOUR FLIGHT RECORD</p>
+                <h2>Last 3 scores</h2>
+              </div>
+              <span class="tiny-icon" aria-hidden="true">≋</span>
+            </div>
+            <pre id="recent-scores"></pre>
+            <p>
+              Newest first · this browser · Human & Decider<br />Completed and
+              stopped runs. Shadow runs excluded.
+            </p>
+          </section>
+        </aside>
+      </div>
+
+      <section
+        class="below-deck"
+        id="game-details"
+        tabindex="-1"
+        aria-label="Game details"
+      >
+        <details class="advanced panel">
+          <summary>
+            <span
+              ><span class="eyebrow">TUNE THE CONNECTION</span
+              ><strong>Advanced settings</strong></span
+            ><span class="expand-mark" aria-hidden="true">+</span>
+          </summary>
+          <div class="controls">
+            <label
+              >Decider source<select id="decider-source">
+                <option value="http" selected>strands-decider (http)</option>
+                <option value="mock">mock (CI / offline)</option>
+              </select></label
+            ><label
+              >Decision threshold<input
+                id="threshold"
+                type="number"
+                min="0"
+                max="1"
+                step="0.05"
+                value="0.40"
+                title="Chosen-option probability, not probability of correctness. Below this selects stay; staying can still collide." /></label
+            ><label class="grow"
+              >Decider URL<input
+                id="decider-url"
+                type="text"
+                value="/decider"
+                spellcheck="false"
+            /></label>
+            <p class="metric-note">
+              Changing the connection resets your run. Mock is an offline
+              heuristic. The threshold can substitute stay; staying is not
+              guaranteed safe.
+            </p>
+          </div>
+        </details>
+        <details class="log-box panel">
+          <summary>
+            <span
+              ><span class="eyebrow">UNDER THE HOOD</span
+              ><strong>Decision log</strong></span
+            ><span class="expand-mark" aria-hidden="true">+</span>
+          </summary>
+          <pre id="decision-log" class="decision-log">—</pre>
+        </details>
+      </section>
+      <footer class="site-footer">
+        <span
+          >GRID DODGER <span class="footer-cross" aria-hidden="true">+</span> AN
+          EXPERIMENT IN PLAY</span
+        ><span>Strands Decider 2B pilots. Amazon Bedrock narrates.</span>
+      </footer>
+    </main>
+    <script>
+      if (location.protocol === "file:") {
+        document.getElementById("launch-warning").hidden = false;
+        document.getElementById("btn-start").disabled = true;
+        document.getElementById("status").textContent =
+          "Open a game server link above";
+      } else {
+        if (new URLSearchParams(location.search).get("embed") === "1" && window.parent !== window) {
+          document.documentElement.dataset.arcadeEmbed = "true";
+          import("./embed.mjs");
+        }
+        import("./app.js").catch(() => {
+          document.getElementById("status").textContent =
+            "Game could not load. Reload this page.";
+          document.getElementById("btn-start").disabled = true;
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "grid-dodger",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Grid Dodger \u2014 Strands Decider 2B pilots a browser grid game; Bedrock optional recap.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "serve": "node scripts/dev_server.mjs",
+    "serve:static": "python3 -m http.server 8080",
+    "decider": "bash -lc 'source .venv/bin/activate && strands-decider serve StrandsAgents/strands-decider-2B-hobson-v19 --device mps --port 8000'",
+    "decider:cpu": "bash -lc 'source .venv/bin/activate && strands-decider serve StrandsAgents/strands-decider-2B-hobson-v19 --device cpu --port 8000'",
+    "test:live": "DECIDER_LIVE=1 node --test tests/live-decider.test.mjs",
+    "test:lambda": "python3 -m unittest discover -s tests -p '*_test.py'",
+    "benchmark": "node scripts/benchmark.mjs",
+    "recap": "node scripts/bedrock_recap.mjs",
+    "build-image": "bash scripts/build_decider_image.sh",
+    "test:hosted": "node scripts/smoke_hosted.mjs",
+    "build:pages": "node scripts/build_pages.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.1152.0"
+  }
+}

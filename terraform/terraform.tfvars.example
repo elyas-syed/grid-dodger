@@ -1,0 +1,12 @@
+aws_region                  = "us-east-1"
+environment                 = "demo"
+name_prefix                 = "grid-dodger"
+bedrock_model_id            = "amazon.nova-lite-v1:0"
+decider_cpu                 = 2048
+decider_memory              = 8192
+decider_instance_type       = "g4dn.xlarge"
+decider_desired_count       = 0   # 0 until make build-image; then set 1 to run GPU
+decider_ecr_repository_name = "grid-dodger-decider"
+decider_image_tag           = "latest"
+budget_limit_usd            = 40
+budget_email                = "you@example.com"

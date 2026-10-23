@@ -1,0 +1,68 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*~
+
+# Secrets & local env (never commit)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+credentials*
+*_credentials*
+.aws/
+
+# Node / Python
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+dist/
+*.egg-info/
+
+# Logs & scratch
+*.log
+tmp/
+.temp/
+crash.log
+crash.*.log
+
+# Docker / image scratch
+*.tar
+*.tar.gz
+
+# Game asset extraction dumps (keep curated files under game/assets/)
+game/assets/tmp/
+
+# Hugging Face / model caches (local)
+.cache/
+models/
+
+# Terraform — keep .terraform.lock.hcl and *.tf / *.example in git
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/tfplan
+terraform/*.tfplan
+terraform/*tfplan*
+terraform/terraform.tfvars
+terraform/*.auto.tfvars
+terraform/override.tf
+terraform/*_override.tf
+terraform/.build/
+terraform/crash.log
+terraform/crash.*.log
+
+# Generated static site and private working notes
+/_site/
+/docs-local/

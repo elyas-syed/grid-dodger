@@ -1,0 +1,3422 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-17T01:18:30.049Z",
+  "clientNode": "v24.3.0",
+  "imageDigest": null,
+  "configuration": {
+    "threshold": 0.4,
+    "seeds": [
+      11,
+      23,
+      37,
+      53,
+      71
+    ],
+    "maxTicks": 60,
+    "snapshots": 40,
+    "variants": [
+      "heuristic"
+    ],
+    "warmupRequests": 0,
+    "spawnChance": 0.36,
+    "notes": "Single run per fixed case/seed; same spawn RNG per policy, episodes end on collision or 60-tick cap. Heuristic has no model calls. Latency includes network; no frontier-model or monetary cost comparison. Spawn RNG is seeded; model inference is not seeded."
+  },
+  "snapshots": [
+    {
+      "id": "col-0-layout-0",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 0,
+        "hazards": [],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.08416599999999974,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-0-layout-1",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 0,
+        "hazards": [
+          {
+            "col": 0,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "right",
+      "choice": "right",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.0327920000000006,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-0-layout-2",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 0,
+        "hazards": [
+          {
+            "col": 0,
+            "row": 8
+          },
+          {
+            "col": 1,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": false,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": true,
+      "ms": 0.0050829999999990605,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-0-layout-3",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 0,
+        "hazards": [
+          {
+            "col": 0,
+            "row": 8
+          },
+          {
+            "col": 0,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "right",
+      "choice": "right",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.008666000000001617,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-0-layout-4",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 0,
+        "hazards": [
+          {
+            "col": 1,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.005875000000003183,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-0-layout-5",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 0,
+        "hazards": [
+          {
+            "col": 0,
+            "row": 7
+          },
+          {
+            "col": 1,
+            "row": 6
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "right",
+      "choice": "right",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.010958000000002244,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-0-layout-6",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 0,
+        "hazards": [
+          {
+            "col": 0,
+            "row": 8
+          },
+          {
+            "col": 1,
+            "row": 8
+          },
+          {
+            "col": 2,
+            "row": 8
+          },
+          {
+            "col": 3,
+            "row": 8
+          },
+          {
+            "col": 4,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": false,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": true,
+      "ms": 0.00412499999999838,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-0-layout-7",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 0,
+        "hazards": [
+          {
+            "col": 0,
+            "row": 8
+          },
+          {
+            "col": 1,
+            "row": 9
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": false,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": true,
+      "ms": 0.003208000000000766,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-1-layout-0",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 1,
+        "hazards": [],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.00658300000000267,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-1-layout-1",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 1,
+        "hazards": [
+          {
+            "col": 1,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.010708999999998525,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-1-layout-2",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 1,
+        "hazards": [
+          {
+            "col": 1,
+            "row": 8
+          },
+          {
+            "col": 2,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.004540999999999684,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-1-layout-3",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 1,
+        "hazards": [
+          {
+            "col": 1,
+            "row": 8
+          },
+          {
+            "col": 0,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "right",
+      "choice": "right",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.0030000000000001137,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-1-layout-4",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 1,
+        "hazards": [
+          {
+            "col": 0,
+            "row": 9
+          },
+          {
+            "col": 2,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.0023749999999971294,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-1-layout-5",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 1,
+        "hazards": [
+          {
+            "col": 1,
+            "row": 7
+          },
+          {
+            "col": 2,
+            "row": 6
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.006625000000003212,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-1-layout-6",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 1,
+        "hazards": [
+          {
+            "col": 0,
+            "row": 8
+          },
+          {
+            "col": 1,
+            "row": 8
+          },
+          {
+            "col": 2,
+            "row": 8
+          },
+          {
+            "col": 3,
+            "row": 8
+          },
+          {
+            "col": 4,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": false,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": true,
+      "ms": 0.005290999999999713,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-1-layout-7",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 1,
+        "hazards": [
+          {
+            "col": 1,
+            "row": 8
+          },
+          {
+            "col": 2,
+            "row": 9
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.0024170000000012237,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-2-layout-0",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 2,
+        "hazards": [],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.002500000000001279,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-2-layout-1",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 2,
+        "hazards": [
+          {
+            "col": 2,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.004667000000001309,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-2-layout-2",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 2,
+        "hazards": [
+          {
+            "col": 2,
+            "row": 8
+          },
+          {
+            "col": 3,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.002541999999998268,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-2-layout-3",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 2,
+        "hazards": [
+          {
+            "col": 2,
+            "row": 8
+          },
+          {
+            "col": 1,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "right",
+      "choice": "right",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.0026669999999988647,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-2-layout-4",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 2,
+        "hazards": [
+          {
+            "col": 1,
+            "row": 9
+          },
+          {
+            "col": 3,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.002041999999999433,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-2-layout-5",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 2,
+        "hazards": [
+          {
+            "col": 2,
+            "row": 7
+          },
+          {
+            "col": 3,
+            "row": 6
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.00470799999999727,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-2-layout-6",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 2,
+        "hazards": [
+          {
+            "col": 0,
+            "row": 8
+          },
+          {
+            "col": 1,
+            "row": 8
+          },
+          {
+            "col": 2,
+            "row": 8
+          },
+          {
+            "col": 3,
+            "row": 8
+          },
+          {
+            "col": 4,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": false,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": true,
+      "ms": 0.003208000000000766,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-2-layout-7",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 2,
+        "hazards": [
+          {
+            "col": 2,
+            "row": 8
+          },
+          {
+            "col": 3,
+            "row": 9
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.00216700000000003,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-3-layout-0",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 3,
+        "hazards": [],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.0023339999999976158,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-3-layout-1",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 3,
+        "hazards": [
+          {
+            "col": 3,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.009124999999997385,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-3-layout-2",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 3,
+        "hazards": [
+          {
+            "col": 3,
+            "row": 8
+          },
+          {
+            "col": 4,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.00274999999999892,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-3-layout-3",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 3,
+        "hazards": [
+          {
+            "col": 3,
+            "row": 8
+          },
+          {
+            "col": 2,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "right",
+      "choice": "right",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.0025830000000013342,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-3-layout-4",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 3,
+        "hazards": [
+          {
+            "col": 2,
+            "row": 9
+          },
+          {
+            "col": 4,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.0020000000000024443,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-3-layout-5",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 3,
+        "hazards": [
+          {
+            "col": 3,
+            "row": 7
+          },
+          {
+            "col": 4,
+            "row": 6
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.004750000000001364,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-3-layout-6",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 3,
+        "hazards": [
+          {
+            "col": 0,
+            "row": 8
+          },
+          {
+            "col": 1,
+            "row": 8
+          },
+          {
+            "col": 2,
+            "row": 8
+          },
+          {
+            "col": 3,
+            "row": 8
+          },
+          {
+            "col": 4,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": false,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": true,
+      "ms": 0.003167000000001252,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-3-layout-7",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 3,
+        "hazards": [
+          {
+            "col": 3,
+            "row": 8
+          },
+          {
+            "col": 4,
+            "row": 9
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.0021249999999994884,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-4-layout-0",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 4,
+        "hazards": [],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.002082999999998947,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-4-layout-1",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 4,
+        "hazards": [
+          {
+            "col": 4,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.017082999999999515,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-4-layout-2",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 4,
+        "hazards": [
+          {
+            "col": 4,
+            "row": 8
+          },
+          {
+            "col": 4,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.0030409999999996273,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-4-layout-3",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 4,
+        "hazards": [
+          {
+            "col": 4,
+            "row": 8
+          },
+          {
+            "col": 3,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": false,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": true,
+      "ms": 0.0022500000000000853,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-4-layout-4",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 4,
+        "hazards": [
+          {
+            "col": 3,
+            "row": 9
+          },
+          {
+            "col": 4,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": false,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": true,
+      "ms": 0.0017920000000017922,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-4-layout-5",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 4,
+        "hazards": [
+          {
+            "col": 4,
+            "row": 7
+          },
+          {
+            "col": 4,
+            "row": 6
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.004832999999997867,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-4-layout-6",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 4,
+        "hazards": [
+          {
+            "col": 0,
+            "row": 8
+          },
+          {
+            "col": 1,
+            "row": 8
+          },
+          {
+            "col": 2,
+            "row": 8
+          },
+          {
+            "col": 3,
+            "row": 8
+          },
+          {
+            "col": 4,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": false,
+      "rawChoice": "stay",
+      "choice": "stay",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": true,
+      "ms": 0.0032499999999977547,
+      "serverMs": null,
+      "usage": null
+    },
+    {
+      "id": "col-4-layout-7",
+      "variant": "heuristic",
+      "state": {
+        "cols": 5,
+        "rows": 10,
+        "playerCol": 4,
+        "hazards": [
+          {
+            "col": 4,
+            "row": 8
+          }
+        ],
+        "score": 0,
+        "gameOver": false,
+        "tick": 0
+      },
+      "avoidable": true,
+      "rawChoice": "left",
+      "choice": "left",
+      "choiceProbability": 1,
+      "reliability": null,
+      "probabilities": null,
+      "unsure": false,
+      "collision": false,
+      "ms": 0.002165999999999002,
+      "serverMs": null,
+      "usage": null
+    }
+  ],
+  "episodes": [
+    {
+      "seed": 11,
+      "variant": "heuristic",
+      "ticks": 60,
+      "collision": false,
+      "capped": true,
+      "error": null,
+      "decisions": [
+        {
+          "tick": 0,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.010625000000000995,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 1,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.006750000000000256,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 2,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004457999999999629,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 3,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.005041999999999547,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 4,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004000000000001336,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 5,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.016332999999999487,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 6,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004208000000001988,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 7,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0067909999999997694,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 8,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.005207999999999657,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 9,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0039579999999972415,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 10,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024170000000012237,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 11,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.008417000000001451,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 12,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0045000000000001705,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 13,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0048340000000024475,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 14,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004999999999999005,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 15,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.00470799999999727,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 16,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0022079999999995437,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 17,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0037079999999996005,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 18,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.01270900000000097,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 19,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0033750000000019043,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 20,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0033330000000013627,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 21,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004000000000001336,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 22,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.015167000000001707,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 23,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.003917000000001281,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 24,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004999999999999005,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 25,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.003124999999997158,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 26,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.005791999999999575,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 27,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.012582999999999345,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 28,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.006499999999999062,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 29,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.003665999999999059,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 30,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.009125000000000938,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 31,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0035840000000000316,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 32,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004999999999999005,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 33,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.003667000000000087,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 34,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.003958000000000794,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 35,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0025420000000018206,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 36,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004457999999999629,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 37,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002500000000001279,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 38,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004459000000000657,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 39,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.003917000000001281,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 40,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004667000000001309,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 41,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0017919999999982394,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 42,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0019999999999988916,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 43,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004083999999998866,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 44,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002082999999998947,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 45,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.014375000000001137,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 46,
+          "rawChoice": "left",
+          "choice": "left",
+          "unsure": false,
+          "ms": 0.002625000000001876,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 47,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0036660000000026116,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 48,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0015420000000005984,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 49,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.025707999999998066,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 50,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004875000000001961,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 51,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0027079999999983784,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 52,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004708999999998298,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 53,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.01683299999999832,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 54,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.007082999999997952,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 55,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0027500000000024727,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 56,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002625000000001876,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 57,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024590000000017653,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 58,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.003292000000001849,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 59,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.006125000000000824,
+          "serverMs": null,
+          "usage": null
+        }
+      ]
+    },
+    {
+      "seed": 23,
+      "variant": "heuristic",
+      "ticks": 15,
+      "collision": true,
+      "capped": false,
+      "error": null,
+      "decisions": [
+        {
+          "tick": 0,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.006000000000000227,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 1,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002625000000001876,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 2,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0025420000000018206,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 3,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.003416999999998893,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 4,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002709000000002959,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 5,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.004540999999999684,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 6,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0026669999999988647,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 7,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0038330000000001974,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 8,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024999999999977263,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 9,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.007082999999997952,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 10,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0027910000000019863,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 11,
+          "rawChoice": "left",
+          "choice": "left",
+          "unsure": false,
+          "ms": 0.0034999999999989484,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 12,
+          "rawChoice": "left",
+          "choice": "left",
+          "unsure": false,
+          "ms": 0.0027919999999994616,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 13,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.003917000000001281,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 14,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0016670000000011953,
+          "serverMs": null,
+          "usage": null
+        }
+      ]
+    },
+    {
+      "seed": 37,
+      "variant": "heuristic",
+      "ticks": 39,
+      "collision": true,
+      "capped": false,
+      "error": null,
+      "decisions": [
+        {
+          "tick": 0,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.005459000000001879,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 1,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0025829999999977815,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 2,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.003959000000001822,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 3,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.00274999999999892,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 4,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002375000000000682,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 5,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.011624999999998664,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 6,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.01229200000000219,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 7,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0030000000000001137,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 8,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0026660000000013895,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 9,
+          "rawChoice": "left",
+          "choice": "left",
+          "unsure": false,
+          "ms": 0.002500000000001279,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 10,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.001958999999999378,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 11,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.27149999999999963,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 12,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0028329999999989752,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 13,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0027089999999994063,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 14,
+          "rawChoice": "left",
+          "choice": "left",
+          "unsure": false,
+          "ms": 0.0025410000000007926,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 15,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0021660000000025548,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 16,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0020000000000024443,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 17,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0025830000000013342,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 18,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002624999999998323,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 19,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024999999999977263,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 20,
+          "rawChoice": "right",
+          "choice": "right",
+          "unsure": false,
+          "ms": 0.0024590000000017653,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 21,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0017920000000017922,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 22,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0018749999999982947,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 23,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024999999999977263,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 24,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024999999999977263,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 25,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0027500000000024727,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 26,
+          "rawChoice": "left",
+          "choice": "left",
+          "unsure": false,
+          "ms": 0.0027079999999983784,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 27,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0022910000000031516,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 28,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002041000000001958,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 29,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002625000000001876,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 30,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002500000000001279,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 31,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002041999999999433,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 32,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0027079999999983784,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 33,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0027500000000024727,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 34,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002500000000001279,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 35,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0031250000000007105,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 36,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0025830000000013342,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 37,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024999999999977263,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 38,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0017089999999981842,
+          "serverMs": null,
+          "usage": null
+        }
+      ]
+    },
+    {
+      "seed": 53,
+      "variant": "heuristic",
+      "ticks": 60,
+      "collision": false,
+      "capped": true,
+      "error": null,
+      "decisions": [
+        {
+          "tick": 0,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002874999999999517,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 1,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0022090000000005716,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 2,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.001916000000001361,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 3,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002292000000000627,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 4,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.00254099999999724,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 5,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.00274999999999892,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 6,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002292000000000627,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 7,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0022079999999995437,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 8,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0025410000000007926,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 9,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0027079999999983784,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 10,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0028329999999989752,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 11,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002874999999999517,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 12,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002625000000001876,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 13,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0020839999999999748,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 14,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002041999999999433,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 15,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.003457999999998407,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 16,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.013083000000001732,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 17,
+          "rawChoice": "right",
+          "choice": "right",
+          "unsure": false,
+          "ms": 0.0022090000000005716,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 18,
+          "rawChoice": "right",
+          "choice": "right",
+          "unsure": false,
+          "ms": 0.0024160000000001958,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 19,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002375000000000682,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 20,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0018750000000018474,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 21,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.00274999999999892,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 22,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024999999999977263,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 23,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002375000000000682,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 24,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024580000000007374,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 25,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0022079999999995437,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 26,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.001709000000001737,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 27,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0017500000000012506,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 28,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0021249999999994884,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 29,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0016660000000001673,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 30,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.00254099999999724,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 31,
+          "rawChoice": "left",
+          "choice": "left",
+          "unsure": false,
+          "ms": 0.002624999999998323,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 32,
+          "rawChoice": "left",
+          "choice": "left",
+          "unsure": false,
+          "ms": 0.0024170000000012237,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 33,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0026670000000024174,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 34,
+          "rawChoice": "left",
+          "choice": "left",
+          "unsure": false,
+          "ms": 0.001958999999999378,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 35,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002334000000004721,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 36,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.001999999999995339,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 37,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0027919999999994616,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 38,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002291999999997074,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 39,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0016660000000001673,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 40,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0012919999999994047,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 41,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0022080000000030964,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 42,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.001916000000001361,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 43,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0021660000000025548,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 44,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0015000000000000568,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 45,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.001832999999997753,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 46,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0029590000000041528,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 47,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024590000000017653,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 48,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0018749999999982947,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 49,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0021249999999994884,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 50,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0021660000000025548,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 51,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0031250000000042633,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 52,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0025410000000007926,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 53,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002833000000002528,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 54,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.009750000000003922,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 55,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0027910000000019863,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 56,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002250000000003638,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 57,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0019169999999988363,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 58,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024170000000012237,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 59,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002290999999999599,
+          "serverMs": null,
+          "usage": null
+        }
+      ]
+    },
+    {
+      "seed": 71,
+      "variant": "heuristic",
+      "ticks": 50,
+      "collision": true,
+      "capped": false,
+      "error": null,
+      "decisions": [
+        {
+          "tick": 0,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0026670000000024174,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 1,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0019580000000019027,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 2,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0017920000000017922,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 3,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.006166999999997813,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 4,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0019579999999947972,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 5,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002082999999998947,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 6,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.00216700000000003,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 7,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002082999999998947,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 8,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0018749999999982947,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 9,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0020830000000060522,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 10,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.003416999999998893,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 11,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.009082999999996844,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 12,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002916000000006136,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 13,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.008749999999999147,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 14,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.001832999999997753,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 15,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0019590000000064833,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 16,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0025830000000013342,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 17,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002290999999999599,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 18,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0021249999999994884,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 19,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0021249999999994884,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 20,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002666000000004942,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 21,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024999999999977263,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 22,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002082999999998947,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 23,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0018750000000054001,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 24,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002040999999998405,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 25,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024999999999977263,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 26,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002625000000001876,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 27,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002709000000002959,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 28,
+          "rawChoice": "left",
+          "choice": "left",
+          "unsure": false,
+          "ms": 0.0027910000000019863,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 29,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024169999999941183,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 30,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0021249999999994884,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 31,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002666999999995312,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 32,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0023339999999976158,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 33,
+          "rawChoice": "left",
+          "choice": "left",
+          "unsure": false,
+          "ms": 0.0017920000000017922,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 34,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002082999999998947,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 35,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0017089999999981842,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 36,
+          "rawChoice": "right",
+          "choice": "right",
+          "unsure": false,
+          "ms": 0.0047919999999948,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 37,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.13270799999999383,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 38,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0020000000000024443,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 39,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024590000000017653,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 40,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.00216700000000003,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 41,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.002375000000000682,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 42,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0024590000000017653,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 43,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0023330000000001405,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 44,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.00216700000000003,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 45,
+          "rawChoice": "left",
+          "choice": "left",
+          "unsure": false,
+          "ms": 0.0023339999999976158,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 46,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0022090000000005716,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 47,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0017500000000012506,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 48,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0022920000000041796,
+          "serverMs": null,
+          "usage": null
+        },
+        {
+          "tick": 49,
+          "rawChoice": "stay",
+          "choice": "stay",
+          "unsure": false,
+          "ms": 0.0015409999999960178,
+          "serverMs": null,
+          "usage": null
+        }
+      ]
+    }
+  ],
+  "summary": [
+    {
+      "variant": "heuristic",
+      "snapshotRequests": 40,
+      "snapshotErrors": 0,
+      "avoidableCases": 31,
+      "avoidableCollisions": 0,
+      "unavoidableCases": 9,
+      "episodeErrors": 0,
+      "meanSurvivalTicks": 44.8,
+      "medianSurvivalTicks": 50,
+      "cappedEpisodes": 2,
+      "sampleCount": 264,
+      "snapshotMedianMs": 0.003208000000000766,
+      "snapshotP95Ms": 0.017082999999999515,
+      "medianMs": 0.002625000000001876,
+      "p95Ms": 0.01229200000000219,
+      "inputTokens": 0,
+      "outputTokens": 0
+    }
+  ]
+}

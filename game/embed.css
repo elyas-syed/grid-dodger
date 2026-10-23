@@ -1,0 +1,19 @@
+/* Opt-in presentation only: standalone /game/ retains its accepted layout. */
+html[data-arcade-embed="true"] {height:auto;overflow:hidden;background:#080e12}
+html[data-arcade-embed="true"] body {min-height:0;min-width:0;height:auto;background:transparent;overflow:hidden;--page-backdrop:transparent}
+html[data-arcade-embed="true"] body::before {display:none}
+html[data-arcade-embed="true"] .wrap {width:100%;max-width:none;padding:0;margin:0}
+html[data-arcade-embed="true"] .site-header {position:static;min-height:0;margin:0 0 10px;border:0;background:none}
+html[data-arcade-embed="true"] .site-header .brand,
+html[data-arcade-embed="true"] .site-header .edition,
+html[data-arcade-embed="true"] .site-header .creator-credit,
+html[data-arcade-embed="true"] .site-header .intro,
+html[data-arcade-embed="true"] .site-footer {display:none}
+html[data-arcade-embed="true"] .site-header .masthead {min-height:40px;padding:0;justify-content:flex-end;transform:none;margin:0}
+html[data-arcade-embed="true"] .site-header .masthead-meta {transform:none}
+html[data-arcade-embed="true"] .mute-toggle {font-size:11px}
+html[data-arcade-embed="true"] .play-controls,
+html[data-arcade-embed="true"] .touch-controls {position:static}
+html[data-arcade-embed="true"] canvas {width:min(100%,320px);height:auto}
+html[data-arcade-embed="true"] #flight-deck {scroll-margin-top:0}
+html[data-arcade-embed="true"] .below-deck {margin-bottom:0}

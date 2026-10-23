@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080e12">
+  <meta name="description" content="Human instinct meets machine decisions. Explore Grid Dodger, an arcade experiment in tool selection with Strands Decider 2B and Amazon Bedrock.">
+  <title>Grid Dodger — Human instinct. Machine decisions.</title>
+  <link rel="stylesheet" href="./landing.css">
+  <script type="module" src="./landing.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Grid Dodger home"><img src="../assets/brand/grid-dodger-logo.png" alt="Grid Dodger" width="2172" height="724"></a>
+    <nav aria-label="Main navigation">
+      <a href="#top">HOME</a>
+      <a href="#experiment">THE EXPERIMENT</a>
+      <a href="#inside">INSIDE THE AGENT</a>
+      <a href="#findings">FINDINGS</a>
+    </nav>
+    <div class="header-actions"><a class="creator header-creator" href="https://github.com/elyas-syed" target="_blank" rel="noopener noreferrer"><svg class="github-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.08c-3.12.68-3.78-1.32-3.78-1.32-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 .1 1.49.8 3.25.18.1-.72.39-1.21.71-1.49-2.49-.28-5.11-1.25-5.11-5.54 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15A10.7 10.7 0 0 1 12 5.47c.95 0 1.9.13 2.79.38 2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.63 5.25-5.13 5.53.4.35.76 1.03.76 2.08v3.82c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/></svg><span>ELYAS SYED</span><span class="sr-only"> on GitHub (opens in a new tab)</span></a><a class="button button-small" href="#demo">Watch the demo <span aria-hidden="true">↗</span></a></div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <img class="hero-art" src="./assets/spacecraft.png" alt="A silver spacecraft banks past asteroids over a glowing mint grid." width="1672" height="941" fetchpriority="high">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content container">
+        <p class="eyebrow"><span class="signal" aria-hidden="true"></span> A SMALL MODEL. EVERY MOVE MATTERS.</p>
+        <h1 id="hero-title">Human instinct.<br><span>Machine decisions.</span></h1>
+        <p class="hero-description">One grid. Falling hazards. A choice that matters.<br>Watch <strong>Strands Decider 2B</strong> choose its next move.<br class="desktop-break"> Then explore how we built it.</p>
+        <div class="hero-actions"><a class="button" href="#demo">Watch Decider play <span aria-hidden="true">↗</span></a><a class="text-link" href="#inside">See how it thinks <span aria-hidden="true">↓</span></a></div>
+        <p class="preview-note"><span aria-hidden="true">◌</span> 60-second recorded walkthrough</p>
+      </div>
+      <div class="hero-bottom container"><span>THE AI ARCADE <span class="slash">/</span> BUILT BY ELYAS SYED</span><a href="#experiment">Explore the experiment <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="model-intro container" aria-labelledby="model-intro-title">
+      <div><p class="eyebrow">MEET THE MODEL</p><h2 id="model-intro-title">What is<br><span class="mint">Strands Decider 2B?</span></h2></div>
+      <div class="model-intro-copy"><p>Strands Decider 2B is a small, open-source decision model from AWS, optimized for fast experimentation, local development, and innovation. Give it context, a question, and a set of options. It returns a choice, yes/no answer, or score.</p><p>In Grid Dodger, it chooses <strong>left, stay, or right</strong>. The game executes the move, and <strong>Amazon Bedrock writes the end-of-run recap</strong>.</p></div>
+    </section>
+
+    <section class="section container experiment" id="experiment" aria-labelledby="experiment-title">
+      <div class="section-heading"><p class="eyebrow">01 <span class="slash">/</span> THE EXPERIMENT</p><h2 id="experiment-title">Same grid.<br><span class="muted">A different kind of pilot.</span></h2><p>Most AI demos ask you to read an answer.<br>This one lets you watch a decision play out.</p></div>
+      <div class="mode-grid">
+        <article class="mode"><div class="mode-top"><span class="mode-number">01</span><span class="mode-symbol" aria-hidden="true">↔</span></div><h3>Human</h3><p class="mode-subtitle">Trust your instincts.</p><p>You steer. Read the falling hazards, choose a lane, and see how far you can go.</p><div class="mode-bottom"><span>YOU FLY</span><span aria-hidden="true">← &nbsp; ↓ &nbsp; →</span></div></article>
+        <article class="mode"><div class="mode-top"><span class="mode-number">02</span><span class="mode-symbol" aria-hidden="true">✦</span></div><h3>Decider</h3><p class="mode-subtitle">Hand over the controls.</p><p>The model chooses left, stay, or right. A registered movement tool executes the choice.</p><div class="mode-bottom"><span>AI FLIES</span><span>3 OPTIONS → 1 TOOL</span></div></article>
+        <article class="mode"><div class="mode-top"><span class="mode-number">03</span><span class="mode-symbol" aria-hidden="true">◇</span></div><h3>Shadow</h3><p class="mode-subtitle">Keep the final say.</p><p>Decider suggests the next move before you act. Follow its lead—or follow your gut.</p><div class="mode-bottom"><span>AI GUIDES. YOU DECIDE.</span><span aria-hidden="true">↗</span></div></article>
+      </div>
+      <div class="game-rule"><span class="rule-star" aria-hidden="true">✧</span><p><strong>Five lanes. One goal: 500 points.</strong><br>Difficulty starts rising at 100. Every move advances the game.</p><a class="text-link" href="#demo">Watch the demo <span aria-hidden="true">↗</span></a></div>
+    </section>
+
+    <section class="inside section" id="inside" aria-labelledby="inside-title">
+      <div class="container">
+        <div class="section-heading inside-heading"><div><p class="eyebrow">02 <span class="slash">/</span> INSIDE THE AGENT</p><h2 id="inside-title">Small model.<br><span class="muted">A meaningful decision.</span></h2></div><p>Strands Decider 2B is a small decision model.<br>Give it a question and a fixed set of options.<br>It chooses; your application acts.</p></div>
+        <div class="decision-stage">
+          <div class="board-panel"><div class="panel-label"><span>THE NEXT MOVE</span></div><div class="mini-board" aria-label="Illustrative board with a ship moving right to avoid a hazard"><div class="lane-glow" aria-hidden="true"></div><img class="rock rock-one" src="../assets/hazard-asteroid.png" width="60" height="60" alt=""><img class="rock rock-two" src="../assets/hazard-asteroid.png" width="60" height="60" alt=""><img class="rock rock-three" src="../assets/hazard-asteroid.png" width="60" height="60" alt=""><img class="mini-ship" src="../assets/player.svg" width="60" height="60" alt="Player ship"><span class="path-arrow" aria-hidden="true">→</span></div><p class="board-caption">LEFT · STAY · RIGHT</p></div>
+          <div class="decision-explainer"><div class="panel-label"><span>THE DECISION RECIPE</span><button class="animation-toggle" type="button" aria-pressed="false">Pause animation <span aria-hidden="true">Ⅱ</span></button></div>
+            <div class="stage-buttons" role="group" aria-label="Explore the decision sequence"><button class="stage-button active" data-stage="0" aria-pressed="true"><span>01</span>Observe</button><button class="stage-button" data-stage="1" aria-pressed="false"><span>02</span>Choose</button><button class="stage-button" data-stage="2" aria-pressed="false"><span>03</span>Move</button><button class="stage-button" data-stage="3" aria-pressed="false"><span>04</span>Recap</button></div>
+            <div class="stage-copy"><p class="eyebrow stage-kicker">01 / GROUNDED CONTEXT</p><h3 class="stage-title">Read the board.</h3><p class="stage-description">The engine describes the board and calculates each move’s immediate outcome. Decider receives explicit facts, not an image to guess from.</p></div>
+            <div class="code-window" aria-label="Illustrative decision recipe"><div class="code-top"><span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span><span>move-selection.recipe</span></div><pre><code><span class="code-muted">// a bounded question, three registered tools</span>
+<span class="code-key">question</span>: <span class="code-string">"Which move is safest?"</span>
+<span class="code-key">options</span>:  [<span class="code-string">"left"</span>, <span class="code-string">"stay"</span>, <span class="code-string">"right"</span>]
+<span class="code-key">selected</span>: <span class="code-string">"right"</span>
+<span class="code-key">tool</span>:     <span class="code-function">move_right</span>()</code></pre></div>
+            <p class="decision-footnote">Decider selects. Deterministic code dispatches the tool.<br>Amazon Bedrock narrates the finished run.</p>
+          </div>
+        </div>
+        <div class="service-line"><span>THE STACK</span><span>Strands Decider 2B</span><span class="stack-plus">+</span><span>Amazon Bedrock</span><span class="stack-plus">+</span><span>Browser game engine</span></div>
+      </div>
+    </section>
+
+    <section class="section container findings" id="findings" aria-labelledby="findings-title">
+      <div class="section-heading"><p class="eyebrow">03 <span class="slash">/</span> WHAT WE LEARNED</p><h2 id="findings-title">Better context.<br><span class="muted">Better next moves.</span></h2><p>The useful finding wasn’t a bigger model.<br>It was a clearer question, grounded in the game.</p></div>
+      <div class="metrics"><div class="metric"><span class="metric-value">17 <span class="metric-arrow">→</span> <span class="mint">0</span></span><h3>Avoidable collisions</h3><p>Original vs. grounded prompt,<br>on 31 avoidable snapshot cases.</p></div><div class="metric"><span class="metric-value">422<span class="metric-unit">ms</span></span><h3>Median decision request</h3><p>Grounded prompt, 40 snapshots.<br>Includes HTTP and network time.</p></div><div class="metric"><span class="metric-value">51<span class="metric-unit">/60</span></span><h3>Mean episode length</h3><p>Grounded prompt, five seeded runs.<br>Episodes capped at 60 moves.</p></div></div>
+      <div class="benchmark-heading"><h3>Measured, side by side.</h3><p>40 fixed snapshots · 5 seeded runs per variant · 60-move cap</p></div>
+      <div class="benchmark-scroll" role="region" aria-label="Benchmark comparison; scroll horizontally on small screens" tabindex="0">
+        <table class="benchmark-table">
+          <caption class="sr-only">Recorded October 17, 2026. The same snapshot cases and spawn seeds were used for each variant, at a 0.40 fallback threshold.</caption>
+          <thead><tr><th scope="col">Variant</th><th scope="col">Avoidable<br>collisions ↓</th><th scope="col">Mean survival<br>moves ↑</th><th scope="col">Reached<br>60 moves ↑</th><th scope="col">Median<br>latency ↓</th><th scope="col">p95<br>latency ↓</th><th scope="col">Errors</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Heuristic<span>Local rule-based baseline</span></th><td>0 / 31</td><td>44.8</td><td>2 / 5</td><td>0.02 ms</td><td>0.10 ms</td><td>0</td></tr>
+            <tr><th scope="row">Original prompt<span>Decider · reconstructed earlier question</span></th><td>17 / 31</td><td>24.2</td><td>0 / 5</td><td>354.66 ms</td><td>384.74 ms</td><td>0</td></tr>
+            <tr class="grounded-row"><th scope="row">Grounded prompt<span>Decider · explicit move outcomes</span></th><td>0 / 31</td><td>51.0</td><td>4 / 5</td><td>422.06 ms</td><td>519.09 ms</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="benchmark-key">Lower collisions and latency are better; higher survival is better. p95 is the time at or below which 95% of snapshot requests finished. Runs reaching 60 moves were stopped at the test limit.</p>
+      <p class="benchmark-meaning"><strong>What it means:</strong> Explicit move outcomes helped Decider avoid immediate mistakes and survive longer in this small test, with a higher median request time. The rule-based baseline also avoided every avoidable snapshot collision and was much faster.</p>
+      <a class="text-link" data-repository-path="benchmarks/results/REPORT.md" href="https://github.com/elyas-syed/grid-dodger/blob/main/benchmarks/results/REPORT.md" target="_blank" rel="noopener noreferrer">Read the benchmark and its limits <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+    </section>
+
+    <section class="demo-section container" id="demo" aria-labelledby="demo-title">
+      <div class="demo-heading"><div><p class="eyebrow">04 <span class="slash">/</span> WATCH THE DECISIONS PLAY OUT</p><h2 id="demo-title" tabindex="-1">A small model.<br><span class="mint">In the pilot’s seat.</span></h2></div><p>See the board. Watch the choice.<br>Follow the move that happens next.</p></div>
+      <div class="demo-player">
+        <div class="demo-player-bar"><span><span class="signal" aria-hidden="true"></span> GRID DODGER <span class="slash">/</span> DECIDER MODE</span><span id="demo-status">RECORDED GAMEPLAY</span></div>
+        <video id="demo-video" controls playsinline preload="none" poster="./assets/decider-preview.png" aria-label="Recorded Grid Dodger gameplay with Strands Decider 2B" hidden></video>
+        <div class="demo-poster" id="demo-poster"><img src="./assets/decider-preview.png" alt="Previously captured real Decider gameplay at 44 points, showing its chosen move, probabilities, and decision time." width="1440" height="1100" loading="lazy"><div class="demo-poster-label"><span class="demo-still-tag">CAPTURED GAMEPLAY · STILL IMAGE</span><h3>Watch the recorded run.</h3><p>This is a real Decider run.<br>See Human, Decider, and Shadow modes in the video.</p></div></div>
+      </div>
+      <div class="demo-caption"><p id="demo-caption-text">Recorded Human, Decider, and Shadow gameplay with a real Amazon Bedrock recap.</p><a class="text-link" href="#build">Build it yourself <span aria-hidden="true">↓</span></a></div>
+      <div class="demo-observe"><p class="eyebrow">WHAT TO WATCH FOR</p><div><p><span>01</span><strong>The board</strong> gives the model grounded move outcomes.</p><p><span>02</span><strong>The choice</strong> selects left, stay, or right.</p><p><span>03</span><strong>The tool</strong> turns that choice into a move.</p></div></div>
+    </section>
+
+    <section class="build-section container" id="build" aria-labelledby="build-title">
+      <div class="build-copy"><p class="eyebrow">05 <span class="slash">/</span> BUILD IT YOURSELF</p><h2 id="build-title">Take the idea.<br><span class="muted">Make your next move.</span></h2><p>Run Grid Dodger with real Strands Decider 2B on your own computer, or deploy it in your AWS account. Local movement decisions need no AWS hosting; speed depends on your hardware. Bedrock recaps are optional and use paid AWS model calls.</p><div class="build-actions"><a class="button" data-repository-path="" href="https://github.com/elyas-syed/grid-dodger" target="_blank" rel="noopener noreferrer">Explore the repository <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a class="text-link" data-repository-path="docs/LOCAL_SETUP.md" href="https://github.com/elyas-syed/grid-dodger/blob/main/docs/LOCAL_SETUP.md" target="_blank" rel="noopener noreferrer">Run locally <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a class="text-link" data-repository-path="terraform/README.md" href="https://github.com/elyas-syed/grid-dodger/blob/main/terraform/README.md" target="_blank" rel="noopener noreferrer">Deploy on AWS <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a class="text-link" data-repository-path="docs/grid-dodger-article/ARTICLE.md" href="https://github.com/elyas-syed/grid-dodger/blob/main/docs/grid-dodger-article/ARTICLE.md" target="_blank" rel="noopener noreferrer">Build story <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></div>
+      <aside class="build-cost" aria-label="Reference deployment running costs"><p class="eyebrow">BEFORE YOU DEPLOY ON AWS</p><div class="build-cost-value">~$14<span> / day</span></div><p class="build-cost-month">or $425–430 per 730-hour month</p><p>For the complete, always-on reference setup, before credits and tax. Builds are extra. The GPU is the main cost.</p><p>To test you don't need to deploy everything on AWS. You can run the model locally with the right hardware.</p><a class="text-link" data-repository-path="docs/COSTS.md" href="https://github.com/elyas-syed/grid-dodger/blob/main/docs/COSTS.md" target="_blank" rel="noopener noreferrer">Cost breakdown <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></aside>
+    </section>
+  </main>
+  <footer class="footer container"><a class="footer-wordmark" href="#top">GRID DODGER<span class="mint">.</span></a><p>An experiment in play. A study in decisions.</p><a class="creator" href="https://github.com/elyas-syed" target="_blank" rel="noopener noreferrer"><svg class="github-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-2.08c-3.12.68-3.78-1.32-3.78-1.32-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 .1 1.49.8 3.25.18.1-.72.39-1.21.71-1.49-2.49-.28-5.11-1.25-5.11-5.54 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15A10.7 10.7 0 0 1 12 5.47c.95 0 1.9.13 2.79.38 2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.63 5.25-5.13 5.53.4.35.76 1.03.76 2.08v3.82c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"/></svg><span>ELYAS SYED</span><span aria-hidden="true">↗</span><span class="sr-only"> on GitHub (opens in a new tab)</span></a></footer>
+</body>
+</html>

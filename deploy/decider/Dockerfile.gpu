@@ -1,0 +1,43 @@
+# Strands Decider 2B — CUDA for ECS on EC2 (g4dn).
+# Built in AWS CodeBuild (make build-image) — do not build locally on a small disk.
+#
+# strands-decider 0.1.0 needs torch>=2.7 and transformers>=5.15 (Qwen3.5).
+# Install package with --no-deps so pip does not replace CUDA torch with a CPU wheel.
+
+FROM pytorch/pytorch:2.7.1-cuda12.6-cudnn9-runtime
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    DECIDER_MODEL=StrandsAgents/strands-decider-2B-hobson-v19 \
+    PORT=8000 \
+    HF_HOME=/models/hf
+
+RUN apt-get update && apt-get install -y --no-install-recommends curl \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip install --upgrade pip \
+    && pip install "strands-decider==0.1.0" --no-deps \
+    && pip install \
+         "transformers>=5.15,<6" \
+         "peft>=0.21" \
+         "accelerate>=0.34" \
+         "huggingface_hub>=1.5" \
+         "pydantic>=2.7" \
+         "typer>=0.12" \
+         "rich>=13.7" \
+         "pyyaml>=6.0" \
+         "fastapi>=0.115" \
+         "uvicorn[standard]>=0.30" \
+         "numpy>=1.24" \
+         "safetensors>=0.4" \
+    && python -c "import torch, transformers; from transformers import Qwen3_5ForCausalLM; print('torch', torch.__version__, 'cuda_build', torch.version.cuda, 'transformers', transformers.__version__)" \
+    && rm -rf /root/.cache
+
+WORKDIR /app
+EXPOSE 8000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=300s --retries=3 \
+  CMD curl -fsS "http://127.0.0.1:${PORT}/health" || exit 1
+
+CMD ["sh", "-c", "strands-decider serve \"$DECIDER_MODEL\" --host 0.0.0.0 --port \"$PORT\" --device cuda"]

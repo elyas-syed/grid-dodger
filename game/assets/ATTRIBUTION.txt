@@ -1,0 +1,25 @@
+Art (player + enemy fighter + starfield):
+  Space Starter Kit (CC0) — https://opengameart.org/content/space-starter-kit
+  Files: player.svg, hazard-fighter-dark.svg, bg-space.svg
+
+Art (falling rock — dark asteroid):
+  User-provided icon → hazard-asteroid.png
+
+Audio (start sting):
+  Floraphonic — Cute Level Up 3 (189853), user-provided MP3.
+  Original filename: floraphonic-cute-level-up-3-189853.mp3
+  Project file: sfx-start.mp3
+
+Legacy start sting (unused):
+  Kenney Space Shooter Redux (CC0) — sfx-start.ogg
+
+Audio (game over / BGM):
+  freesound_community — sfx-gameover.mp3, bgm-suits-you.mp3
+  Project owner confirmed redistribution rights for the supplied assets on 2026-10-23. Third-party assets retain their respective licenses.
+
+Grid Dodger logo:
+  Original project logo generated with the built-in image-generation tool on 2026-10-16.
+  File: brand/grid-dodger-logo.png
+  Prompt and usage notes (repository): docs/BRAND.md
+
+Supplied asteroid icon and audio: project owner confirmed redistribution rights on 2026-10-23.

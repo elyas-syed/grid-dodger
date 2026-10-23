@@ -1,0 +1,263 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2B or Not 2B? — Grid Dodger with Strands Decider 2B</title><style>
+:root{color-scheme:light;--ink:#172a32;--muted:#526972;--line:#dce6e3;--accent:#13664c;--paper:#f8faf7}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.8 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{padding:18px 4vw;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:#eaf1eb}header strong{color:var(--accent)}
+.layout{max-width:1440px;margin:auto;padding:48px 36px 100px;display:grid;grid-template-columns:220px minmax(0,960px);gap:64px}aside{position:sticky;top:24px;align-self:start;max-height:90vh;overflow:auto;font-size:13px;line-height:1.65;padding-right:12px}aside h2{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin:0 0 14px}aside ul{padding-left:16px}aside li{margin:0 0 12px}aside a{text-decoration:none;color:var(--muted)}aside a:hover{color:var(--accent)}
+.mobile-toc{display:none}article{min-width:0}h1{font-size:clamp(34px,4.3vw,56px);line-height:1.12;letter-spacing:-.045em;margin:0 0 24px;max-width:880px}.title-hook{display:block;font-size:clamp(42px,5.3vw,68px);line-height:1.08}.title-detail{display:block;margin-top:16px;font-size:clamp(26px,3vw,38px);line-height:1.16;letter-spacing:-.03em}article h2{font-size:30px;line-height:1.25;letter-spacing:-.025em;margin:64px 0 22px;max-width:800px;scroll-margin-top:28px}p,article>ul,article>ol{max-width:800px}p{margin:0 0 24px}a{color:var(--accent);text-underline-offset:3px}a:hover{color:#083d2c}strong{font-weight:700}em{color:var(--muted)}
+img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid #cad8d5}p:has(img){max-width:none;margin:34px 0 14px}p:has(img)+p:has(>em){font-size:14px;line-height:1.65;max-width:900px}table{border-collapse:collapse;width:100%;font-size:14px;line-height:1.65;margin:28px 0;background:white}th,td{text-align:left;vertical-align:top;padding:13px 12px;border-bottom:1px solid var(--line)}th{background:#e6eee8;color:#1d4c3d;font-size:12px}pre{padding:24px;background:#0b1a24;color:#dcefe8;border-radius:12px;overflow:auto;font-size:13px;line-height:1.7}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.85em}p code,li code,td code{background:#e8efea;padding:2px 5px;border-radius:4px}hr{border:0;border-top:1px solid var(--line);margin:52px 0}footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:24px}
+@media(max-width:1100px){.layout{display:block;max-width:980px;padding:36px 24px 70px}aside{position:static;max-height:none;margin-bottom:40px;border-bottom:1px solid var(--line)}aside .toc ul{columns:2;column-gap:28px}aside li{break-inside:avoid}}@media(max-width:1100px){aside{display:none}.mobile-toc{display:block;margin:0 0 28px;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:white;font-size:14px}.mobile-toc summary{cursor:pointer;min-height:32px;color:var(--accent);font-weight:600}.mobile-toc ul{padding-left:18px}}@media(max-width:600px){body{font-size:17px}.layout{padding:28px 18px 60px}header{font-size:10px;padding:14px 18px}article h2{font-size:26px;margin-top:44px}aside .toc ul{columns:1}table{display:block;overflow-x:auto}pre{padding:16px;font-size:12px}img{border-radius:8px}}
+@media print{header,aside{display:none}.layout{display:block;padding:0;max-width:none}body{background:white;font-size:11pt}h1{font-size:30pt}article h2{break-after:avoid}img,pre,tr{break-inside:avoid}a{color:inherit}pre{white-space:pre-wrap}}
+</style></head><body><header><strong>Grid Dodger / Field notes</strong><span>16 min read</span></header><main class="layout"><aside><h2>In this article</h2><div class="toc">
+<ul>
+<li><a href="#what-is-strands-decider-2b">What is Strands Decider 2B?</a></li>
+<li><a href="#why-build-a-game-around-it">Why build a game around it?</a></li>
+<li><a href="#meet-grid-dodger">Meet Grid Dodger</a></li>
+<li><a href="#how-the-project-works">How the project works</a></li>
+<li><a href="#from-a-board-to-a-move">From a board to a move</a></li>
+<li><a href="#building-the-first-working-version">Building the first working version</a></li>
+<li><a href="#what-went-wrong-and-what-we-changed">What went wrong, and what we changed</a></li>
+<li><a href="#what-the-measurements-actually-say">What the measurements actually say</a></li>
+<li><a href="#what-it-costs-to-run">What it costs to run</a></li>
+<li><a href="#where-could-decider-fit-in-production">Where could Decider fit in production?</a></li>
+<li><a href="#what-another-builder-can-reuse">What another builder can reuse</a></li>
+</ul>
+</div>
+</aside><article><details class="mobile-toc"><summary>Contents · 11 sections</summary><div class="toc">
+<ul>
+<li><a href="#what-is-strands-decider-2b">What is Strands Decider 2B?</a></li>
+<li><a href="#why-build-a-game-around-it">Why build a game around it?</a></li>
+<li><a href="#meet-grid-dodger">Meet Grid Dodger</a></li>
+<li><a href="#how-the-project-works">How the project works</a></li>
+<li><a href="#from-a-board-to-a-move">From a board to a move</a></li>
+<li><a href="#building-the-first-working-version">Building the first working version</a></li>
+<li><a href="#what-went-wrong-and-what-we-changed">What went wrong, and what we changed</a></li>
+<li><a href="#what-the-measurements-actually-say">What the measurements actually say</a></li>
+<li><a href="#what-it-costs-to-run">What it costs to run</a></li>
+<li><a href="#where-could-decider-fit-in-production">Where could Decider fit in production?</a></li>
+<li><a href="#what-another-builder-can-reuse">What another builder can reuse</a></li>
+</ul>
+</div>
+</details><h1 id="2b-or-not-2b-building-grid-dodger-with-strands-decider-2b"><span class="title-hook">2B or Not 2B?</span> <span class="title-detail">Building Grid Dodger with Strands Decider 2B</span></h1>
+<p><strong>By Elyas Syed · October 23, 2026</strong><br />
+<em>Tool selection · #strands-decider-2b #tool-selection</em></p>
+<p><a href="assets/article-cover-high-resolution.png" title="Open full-size image" target="_blank" rel="noopener noreferrer"><img alt="2B or Not 2B? Building Grid Dodger with Strands Decider 2B. GRID DODGER above a spacecraft banking through a neon grid and asteroids. Concept illustration. By Elyas Syed." src="assets/article-cover-high-resolution.png" /></a></p>
+<p>What happens when you give a small decision model the controls to an arcade game?</p>
+<p>I built Grid Dodger to find out. The model gets three choices: left, stay, or right. Falling hazards make the consequences easy to see. Sometimes the ship dodges. Sometimes the answer arrives in perfectly valid JSON and the ship crashes anyway.</p>
+<p>That gave me something useful to work on: a game I could play myself, hand over to the model, or use to compare our decisions side by side. Along the way, I had to fix the information we gave the model, rethink how we displayed its probabilities, and make its suggestions arrive early enough to help a human player.</p>
+<p>Before getting into the game, it helps to explain the model at the center of it.</p>
+<h2 id="what-is-strands-decider-2b">What is Strands Decider 2B?</h2>
+<p>Strands Decider 2B is a small, open-source model for making decisions inside an application. You give it a situation and a typed question. Instead of writing a paragraph, it selects an option, answers yes or no, or assigns a score. For Grid Dodger, the question is simply which movement option to choose. <a href="https://strandsagents.com/blog/introducing-strands-decider/">Official introduction</a></p>
+<p>Think of an agent that has several tools available. A generative model might write the eventual answer, but first the application needs to choose a tool. That smaller choice is the kind of job Decider is intended to handle.</p>
+<p>Our deployment uses <strong><code>StrandsAgents/strands-decider-2B-hobson-v19</code></strong>. Its model card describes a Qwen3.5-2B base with an adapter and a decision head. It also warns that confidence calibration needs testing on your own workload. The project now has newer checkpoints; the results in this article belong to the v19 setup we actually ran. <a href="https://huggingface.co/StrandsAgents/strands-decider-2B-hobson-v19">Checkpoint model card</a></p>
+<p>I paired it with <strong>Amazon Bedrock</strong>, using <strong>Amazon Nova Lite</strong> for the post-game recap. The two models have separate jobs: Decider chooses a movement option; Bedrock writes a short summary after the run ends.</p>
+<h2 id="why-build-a-game-around-it">Why build a game around it?</h2>
+<p>I wanted to see the decision happen, then immediately see what it did.</p>
+<p>A game gives that experiment a clear boundary. There are only three legal moves. The rules live in code. A poor choice has an obvious consequence, and I can replay the same board with a different prompt or controller.</p>
+<p>It also makes the experiment approachable. You do not have to read a trace or understand the request schema to notice that staying put was a bad idea. You can take the controls yourself, watch the AI fly, or ask it for suggestions while you keep playing.</p>
+<p>That last option became Shadow mode, and it turned out to be one of the most useful parts of the project. It lets you disagree with the model before its choice becomes your action.</p>
+<h2 id="meet-grid-dodger">Meet Grid Dodger</h2>
+<p><a href="assets/game-overview.png" title="Open full-size image" target="_blank" rel="noopener noreferrer"><img alt="The live Grid Dodger arcade with Human, Decider and Shadow controls, the game board, decision panel and Bedrock recap." src="assets/game-overview.png" /></a></p>
+<p><em>The actual hosted game. The opening Human-mode screen explains that model probabilities appear only when a model is involved.</em></p>
+<p>The board has five columns and ten rows. Your ship sits at the bottom. You can move one column left, stay where you are, or move one column right. Hazards advance one row at a time. Reach <strong>500 points</strong> to win.</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>How it plays</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Human</strong></td>
+<td>You steer with the keyboard or movement buttons.</td>
+</tr>
+<tr>
+<td><strong>Decider</strong></td>
+<td>The model chooses, the configured policy checks the response, and the game executes the selected movement tool.</td>
+</tr>
+<tr>
+<td><strong>Shadow</strong></td>
+<td>The model suggests a move and shows a yellow target. You make the final choice.</td>
+</tr>
+</tbody>
+</table>
+<p>Difficulty starts increasing at 100 points, reaches Hard at 300 and Extreme at 400. The hazards become denser; they do not suddenly start falling several rows at once.</p>
+<p>Pause lets you continue the same run. Stop ends it deliberately and requests a recap. Collisions and wins also trigger recaps. Recent Human and Decider scores are saved in the browser, so you can compare your own runs without setting up an account.</p>
+<p><strong><a href="https://elyas-syed.github.io/grid-dodger/#demo">Watch the recorded demo</a></strong> or <a href="../LOCAL_SETUP.md">run the game locally</a>. The recording shows the real AWS deployment. That temporary inference stack has been removed to stop hosting charges; the showcase is static.</p>
+<h2 id="how-the-project-works">How the project works</h2>
+<p><a href="assets/architecture-overview.png" title="Open full-size image" target="_blank" rel="noopener noreferrer"><img alt="Architecture showing the browser game, CloudFront routes, S3, the GPU Decider service, the Bedrock recap service, and the image build path." src="assets/architecture-overview.png" /></a></p>
+<p><em>The browser runs the game. The GPU service returns a decision; the recap service returns text.</em></p>
+<p>The frontend is JavaScript and canvas, served from S3 through CloudFront. The same CloudFront address also exposes the two backend routes:</p>
+<ul>
+<li><strong><code>/decider/*</code></strong> goes through an Application Load Balancer to an ECS task on an EC2 <code>g4dn.xlarge</code> GPU instance.</li>
+<li><strong><code>/api/recap</code></strong> goes through API Gateway to a Python Lambda function that calls Bedrock.</li>
+</ul>
+<p>The distinction I want to make clear is where execution happens. Decider does not directly change the ship’s position on the GPU server. It returns an answer. The browser validates that answer, applies the threshold policy, and calls a registered movement tool. The game engine owns movement, scoring and collision detection.</p>
+<p>Bedrock sits outside that movement loop. When a run ends, it receives the outcome, score, pilot mode, recent moves and any validated collision evidence. Its response appears in the recap panel.</p>
+<h2 id="from-a-board-to-a-move">From a board to a move</h2>
+<p><a href="assets/decision-loop.png" title="Open full-size image" target="_blank" rel="noopener noreferrer"><img alt="Decision-loop card showing board state, computed move outcomes, the typed question, Decider selection, policy and tool dispatch." src="assets/decision-loop.png" /></a></p>
+<p><em>The same selection path supports automatic play and human-controlled Shadow suggestions.</em></p>
+<p>Suppose the ship is in column 2 and a hazard is about to fall into that column. The game can calculate the immediate result of each legal move. In this example, left and right are safe for the next step; stay causes a collision.</p>
+<p>We send those facts with a typed question named <code>safest_move</code>. A shortened example looks like this:</p>
+<pre><code class="language-json">{
+  &quot;state&quot;: &quot;Player in column 2; approaching hazard in column 2...&quot;,
+  &quot;questions&quot;: {
+    &quot;safest_move&quot;: {
+      &quot;type&quot;: &quot;choice&quot;,
+      &quot;instructions&quot;: &quot;Choose a SAFE move from the explicit move outcomes...&quot;,
+      &quot;criteria&quot;: {
+        &quot;left&quot;: &quot;SAFE this tick; destination column 1&quot;,
+        &quot;stay&quot;: &quot;COLLISION: game ends; destination column 2&quot;,
+        &quot;right&quot;: &quot;SAFE this tick; destination column 3&quot;
+      }
+    }
+  }
+}
+</code></pre>
+<p>The engine generates the criteria for each board. The example is abbreviated, rather than a complete request copied from a running session.</p>
+<p>The option keys map to three tools: <code>move_left</code>, <code>hold_position</code>, and <code>move_right</code>. Each executes one engine step. Unknown option names cannot call arbitrary functions.</p>
+<p>Before dispatch, the policy checks the returned option and its probability. The current threshold is <strong>0.40</strong>. Below it, the game applies <code>stay</code>. That fallback can still collide, so the interface shows when the applied action differs from the model’s original choice. It is a policy we can evaluate and change, not a safety guarantee.</p>
+<p>In Shadow mode, we stop short of executing the AI’s choice. We display the suggestion and let the human decide.</p>
+<h2 id="building-the-first-working-version">Building the first working version</h2>
+<p>I started with a small browser game and kept the engine separate from the interface. That made it possible to test movement, collisions and scoring without clicking through the page every time something changed.</p>
+<p>Next came the HTTP decision path: format the board, send the typed question, parse the response, and bind the result to one of the movement tools. A mock controller kept local development useful when the real model was unavailable. The interface labels that mode so it cannot be mistaken for live inference.</p>
+<p>For AWS, we built the CUDA container in CodeBuild and stored it in private ECR. ECS pulls that image onto the GPU instance, and Terraform pins the task to an immutable image digest. The recorded clean build took about <strong>5 minutes 28 seconds</strong> and produced a <strong>3.43 GB compressed image</strong>. Future builds can take a different amount of time.</p>
+<p><a href="assets/build-and-resilience.png" title="Open full-size image" target="_blank" rel="noopener noreferrer"><img alt="Build and reliability cards explaining separate container, UI and Lambda releases, plus origin protection and error handling." src="assets/build-and-resilience.png" /></a></p>
+<p><em>Separate release paths mean that changing a button or a recap prompt does not require rebuilding the GPU image.</em></p>
+<p>The Make commands reflect those boundaries:</p>
+<table>
+<thead>
+<tr>
+<th>Change</th>
+<th>Command or workflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Run local checks</td>
+<td><code>make test</code></td>
+</tr>
+<tr>
+<td>Rebuild the Decider container</td>
+<td><code>make build-image</code></td>
+</tr>
+<tr>
+<td>Update Lambda or infrastructure</td>
+<td>Review a Terraform plan, then <code>make infra-apply PLAN=reviewed.tfplan</code></td>
+</tr>
+<tr>
+<td>Publish browser assets</td>
+<td><code>make sync-ui</code></td>
+</tr>
+</tbody>
+</table>
+<p>We also exercised a full teardown and rebuild. That helped catch assumptions that a working deployment can hide. Fresh hosts still need to pull the image and load the model, and replacing a task on one GPU can interrupt the service.</p>
+<p>The demo has origin restrictions, a verification header, WAF limits and recap throttling. Those reduce direct access and abuse; they do not make a public game authenticated or give it a spending cap.</p>
+<h2 id="what-went-wrong-and-what-we-changed">What went wrong, and what we changed</h2>
+<h3 id="the-model-kept-choosing-stay">The model kept choosing stay</h3>
+<p>The first prompt described the approaching hazards and asked for the safest move. That sounded reasonable, but valid responses could still leave the ship in an imminent collision path.</p>
+<p>We improved the input by spelling out the immediate outcome of each candidate move. The formatter checks both moving onto a hazard already at the bottom and a hazard falling onto the destination afterward. The order matters because the player moves before the hazards advance.</p>
+<p>This was an input change, not evidence that the model learned collision detection. We computed those facts ourselves. A rules-based controller can use them too, which is why the benchmark includes a heuristic baseline.</p>
+<h3 id="the-percentages-made-the-model-look-worse-than-the-decision">The percentages made the model look worse than the decision</h3>
+<p><a href="assets/decider-live.png" title="Open full-size image" target="_blank" rel="noopener noreferrer"><img alt="A live Decider run showing the selected move, engine safety facts, actual option probabilities and request time." src="assets/decider-live.png" /></a></p>
+<p><em>Captured during a real HTTP-model run. The probabilities are the values returned by the model.</em></p>
+<p>An early version showed a single percentage and an “unsure” warning. When several moves were safe, a roughly even split looked like a failure. But a 35% preference for one of three reasonable moves is not the same as a 35% chance of survival.</p>
+<p>We removed the generic warning and made the explanation clearer. The panel now distinguishes the model’s choice, any policy override, and the engine’s safe-move facts. It shows the full distribution, labels missing probabilities unavailable, and displays decision time separately. We did not change the numbers to make them look more impressive.</p>
+<p>There are two numeric signals worth keeping apart: the chosen option’s probability drives our policy, while the response’s confidence is retained under the legacy <code>reliability</code> name for the relative-certainty display. Neither should be casually relabeled as a survival prediction.</p>
+<h3 id="shadow-suggestions-arrived-too-late-to-help">Shadow suggestions arrived too late to help</h3>
+<p><a href="assets/shadow-live.png" title="Open full-size image" target="_blank" rel="noopener noreferrer"><img alt="Shadow mode showing a live suggestion and yellow target while the human retains the movement controls." src="assets/shadow-live.png" /></a></p>
+<p><em>The yellow target marks the current suggestion. The player still decides whether to follow it.</em></p>
+<p>It was not enough for the suggestion to be correct. The player needed time to use it.</p>
+<p>We kept the <strong>0.6-second reaction target</strong>, requested each new suggestion as soon as the next board was known, and displayed it immediately on response. Model and network time are additional, so the entire cycle is not guaranteed to finish in 600 ms. Early keypresses are preserved.</p>
+<p>We also stopped replacing the card’s values with a waiting state on every request. The previous metrics remain readable while the next result is pending, but the ghost target only appears for a suggestion that matches the current board.</p>
+<p>That same feedback shaped the rest of the UI: compact movement cards, horizontal pilot controls, a visible recap panel, and Start scrolling a new run into view while Resume preserves the player’s position.</p>
+<h3 id="the-recap-invented-moves-the-game-did-not-have">The recap invented moves the game did not have</h3>
+<p><a href="assets/bedrock-recap.png" title="Open full-size image" target="_blank" rel="noopener noreferrer"><img alt="A stopped run at 44 points with an exact-score banner and actual Bedrock Nova Lite narration." src="assets/bedrock-recap.png" /></a></p>
+<p><em>The footer identifies Bedrock as the source. The praise and advice are generated commentary, not a verified explanation of the run.</em></p>
+<p>The narrator once suggested diagonal movement. There are no diagonals in Grid Dodger. It also called the score “ticks,” because that was how our prompt described it.</p>
+<p>We changed the prompt to use <strong>points for scores</strong> and <strong>moves for actions</strong>, supplied the legal action set, and labeled the move history as a recent sample rather than the whole run. Stop and win use a fixed outcome-and-score opening, with collision evidence removed for those outcomes.</p>
+<p>We screen for excessive length, unsupported mechanics and internal tick terminology. If the response fails those checks, the application shows an explicitly labeled offline fallback. This catches specific problems; it does not verify every piece of advice. Repeated scores and questionable praise remain possible.</p>
+<h2 id="what-the-measurements-actually-say">What the measurements actually say</h2>
+<p>We recorded <strong>40 fixed board snapshots</strong> and <strong>five seeded episodes per controller</strong>, capped at 60 engine steps. The compared controllers were the reconstructed original prompt, the grounded prompt, and a local deterministic heuristic. Snapshot cases are shared. Spawn randomness is seeded for episodes, but model inference is not, and episode states diverge when controllers choose different moves.</p>
+<p><a href="assets/benchmark-results.png" title="Open full-size image" target="_blank" rel="noopener noreferrer"><img alt="Recorded benchmark: the grounded prompt and heuristic each had zero avoidable snapshot collisions; mean capped episode results differed across five seeds." src="assets/benchmark-results.png" /></a></p>
+<p><em>Measured figure. Generated from the stored benchmark report, not from the screenshots in this article. The episode cap censors long runs.</em></p>
+<table>
+<thead>
+<tr>
+<th>Controller</th>
+<th style="text-align: right;">Avoidable collisions / 31 snapshots</th>
+<th style="text-align: right;">Mean episode length in engine steps</th>
+<th style="text-align: right;">Runs reaching cap / 5</th>
+<th style="text-align: right;">Median request ms</th>
+<th style="text-align: right;">p95 request ms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Local heuristic</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">44.8</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.10</td>
+</tr>
+<tr>
+<td>Original prompt</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">24.2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">354.66</td>
+<td style="text-align: right;">384.74</td>
+</tr>
+<tr>
+<td>Grounded prompt</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">51.0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">422.06</td>
+<td style="text-align: right;">519.09</td>
+</tr>
+</tbody>
+</table>
+<p>The clear snapshot finding is that grounding eliminated the 17 avoidable collisions observed with the original prompt in this sample. It did not beat the heuristic’s zero.</p>
+<p>The grounded model’s five episodes averaged 51.0 engine steps, compared with 24.2 for the original prompt and 44.8 for the heuristic. That is encouraging for these seeds, but five capped episodes cannot establish general superiority.</p>
+<p>Grounding also <strong>increased</strong> median snapshot request latency, from approximately 355 to 422 ms; p95 rose from 385 to 519 ms. These are client request timings, including network overhead. The heuristic timings measure local computation and are not an equivalent network request. The official project’s reported hardware-specific latency is not our application latency. <a href="https://strandsagents.com/blog/introducing-strands-decider/">Official performance context</a></p>
+<p>No frontier-model baseline or monetary savings experiment was measured. The 60-step episodes also stop before the current 100-point difficulty ramp. None of these numbers should be turned into a claim that the current model can reliably win the harder 500-point game.</p>
+<p>The <a href="../../benchmarks/results/REPORT.md">recorded report</a>, <a href="../../benchmarks/results/report.json">raw decisions</a>, and <a href="../../benchmarks/README.md">benchmark instructions</a> preserve the evidence and its limits.</p>
+<h2 id="what-it-costs-to-run">What it costs to run</h2>
+<p>The expensive part of this demo is keeping the GPU available, rather than generating the short recap. The project infrastructure was removed on October 17, 2026; the estimates below describe running the full stack again, not its current bill.</p>
+<p>At the checked us-east-1 rates, continuous light-traffic hosting is approximately <strong>$14 per 24-hour day, or $425–430 per 730-hour month</strong>, before credits and tax. The daily planning range is $13.97–14.14, calculated as the monthly estimate × 24/730. GPU compute alone is about $12.62/day, or $384/month. The rest covers the load balancer, public IPv4 addresses, disk, WAF, image storage and a small variable-usage allowance.</p>
+<p>Storing the approximately 3.43 GB ECR image costs roughly $0.01/day, or $0.34/month. A six-minute large Linux CodeBuild run is about $0.12 before credits. UI releases reuse the image, so they do not incur another container build.</p>
+<p>Short Nova Lite recaps add usage-based token charges. The <a href="../COSTS.md">component estimate</a> lists the assumptions and rates. These are hosting estimates, not evidence that our model-driven game saves money over a frontier-model implementation.</p>
+<h2 id="where-could-decider-fit-in-production">Where could Decider fit in production?</h2>
+<p>The game gave us a visible way to try a pattern that could also fit inside a larger agent: let a small model handle a bounded choice, then let application code control what happens next.</p>
+<p>Possible uses include selecting a tool, routing a request to a category or model, checking whether tool arguments match supplied information, and ranking context before passing it to a generative model. These are examples of intended decision-model uses, rather than production results demonstrated by Grid Dodger. <a href="https://github.com/strands-labs/strands-decider">Official project</a></p>
+<p>The potential benefit is avoiding a generative-model call for every small choice. A fixed answer format can simplify parsing, and a self-hosted service gives the builder control over deployment. Whether it is faster or cheaper depends on the request size, hardware, traffic and alternative being replaced. An idle GPU can easily outweigh per-call savings.</p>
+<p>I would treat a production trial as a separate evaluation. Start in shadow mode, compare choices with known outcomes, measure end-to-end latency and cost, and test confidence thresholds on representative traffic. Define what happens when the model is wrong or unavailable. Keep permission checks and hard safety rules in deterministic code, and use human review or a stronger fallback where the consequences justify it.</p>
+<p>Decider is presented as experimental software. The model card also limits where its calibration claims apply. Grid Dodger does not establish production readiness; it gives us a working place to examine the pattern before making that decision. <a href="https://huggingface.co/StrandsAgents/strands-decider-2B-hobson-v19">Model limitations</a></p>
+<h2 id="what-another-builder-can-reuse">What another builder can reuse</h2>
+<p>The most portable part of the project is smaller than the game. The selector and dispatcher in <code>src/tool-selection.mjs</code> have no game or AWS dependency. You provide a decision, register the allowed tools, and choose a fallback appropriate to your application.</p>
+<pre><code class="language-js">import { runToolRecipe } from &quot;./src/tool-selection.mjs&quot;;
+
+const result = await runToolRecipe({
+  // Replace this example response with your normalized Decider result.
+  readDecision: async () =&gt; ({
+    choice: &quot;lookup&quot;,
+    choiceProbability: 0.8
+  }),
+  tools: {
+    lookup: { execute: () =&gt; lookupDocumentation() },
+    ask: { execute: () =&gt; askForMissingSubject() }
+  },
+  fallback: &quot;ask&quot;,
+  threshold: 0.4
+});
+</code></pre>
+<p>The functions above stand in for your own tools. The <a href="../../examples/tool-selection.mjs">runnable example</a> supplies demonstration bindings, and the <a href="../DECIDER_PATTERN.md">recipe guide</a> explains the typed question, options and wiring. Our declared pattern is <strong>tool selection</strong>. We call the Decider HTTP API directly; this project does not implement a Strands Agents <code>InterventionHandler</code>.</p>
+<p>You can also try it without rebuilding our AWS stack. The game and <strong>real Strands Decider 2B run locally</strong>, with MPS acceleration on Apple Silicon or a CPU fallback. The <a href="../LOCAL_SETUP.md">local setup guide</a> covers installation, starting both servers, selecting HTTP mode, and checking actual model responses. Performance depends on your computer. Bedrock recaps remain an optional paid AWS call; without AWS access, the game uses a labeled offline recap. Mock mode is a separate heuristic for offline practice.</p>
+<p>The latest application checkpoint passed <strong>66 Node checks and 7 Lambda checks</strong>. Separate live checks covered Decider decisions, real Bedrock recaps and access restrictions. A post-deployment Terraform plan showed no changes. A complete live 500-point victory run has not been verified. The container digest is pinned, but the model repository revision and a portable Python dependency lock remain follow-up work. <a href="../VALIDATION.md">Validation record</a></p>
+<p>What I would try next is more specific than “make the AI better”: run longer episodes through the difficulty ramp, use more seeds, compare fallback policies, and measure whether the probability thresholds help or hurt on the boards we actually see.</p>
+<p>For now, I have a game I can play, a model I can watch make decisions, and a record of what changed when we gave it better information. That is a useful place to start.</p>
+<hr />
+<p><strong>Project evidence:</strong> <a href="../SPEC.md">specification</a> · <a href="../VALIDATION.md">validation</a> · <a href="../COSTS.md">costs</a> · <a href="../DECIDER_PATTERN.md">reusable recipe</a></p>
+<p><strong>Primary references:</strong> <a href="https://strandsagents.com/blog/introducing-strands-decider/">Decider introduction</a> · <a href="https://github.com/strands-labs/strands-decider">official source</a> · <a href="https://huggingface.co/StrandsAgents/strands-decider-2B-hobson-v19">v19 model card</a> · <a href="https://builder.aws.com/build/hackathons/4f50957c-1d08-37ab-b11c-97516b9adeb4/agent-experience-hackathon-strands-decider">hackathon requirements</a></p><footer>Grid Dodger · Build notes by Elyas Syed.</footer></article></main></body></html>
