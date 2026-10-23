@@ -95,7 +95,11 @@
       <div class="demo-heading"><div><p class="eyebrow">04 <span class="slash">/</span> WATCH THE DECISIONS PLAY OUT</p><h2 id="demo-title" tabindex="-1">A small model.<br><span class="mint">In the pilot’s seat.</span></h2></div><p>See the board. Watch the choice.<br>Follow the move that happens next.</p></div>
       <div class="demo-player">
         <div class="demo-player-bar"><span><span class="signal" aria-hidden="true"></span> GRID DODGER <span class="slash">/</span> DECIDER MODE</span><span id="demo-status">RECORDED GAMEPLAY</span></div>
-        <video id="demo-video" controls playsinline preload="none" poster="./assets/decider-preview.png" aria-label="Recorded Grid Dodger gameplay with Strands Decider 2B" hidden></video>
+        <video id="demo-video" aria-describedby="commentary-body" controls playsinline preload="none" poster="./assets/decider-preview.png" aria-label="Recorded Grid Dodger gameplay with Strands Decider 2B" hidden></video>
+        <section class="demo-commentary" id="demo-commentary" hidden aria-label="Commentary synchronized with narration">
+<div class="summary-heading"><span class="phase" id="commentary-phase">MEET THE MODEL</span><h3 class="title" id="commentary-title">A small model. Every move matters.</h3></div>
+<p class="body" id="commentary-body">Strands Decider 2B is a small, open-source decision model from AWS.</p>
+</section>
         <div class="demo-poster" id="demo-poster"><img src="./assets/decider-preview.png" alt="Previously captured real Decider gameplay at 44 points, showing its chosen move, probabilities, and decision time." width="1440" height="1100" loading="lazy"><div class="demo-poster-label"><span class="demo-still-tag">CAPTURED GAMEPLAY · STILL IMAGE</span><h3>Watch the recorded run.</h3><p>This is a real Decider run.<br>See Human, Decider, and Shadow modes in the video.</p></div></div>
       </div>
       <div class="demo-caption"><p id="demo-caption-text">Recorded Human, Decider, and Shadow gameplay with a real Amazon Bedrock recap.</p><a class="text-link" href="#build">Build it yourself <span aria-hidden="true">↓</span></a></div>

@@ -50,3 +50,12 @@
 .footer{padding-bottom:28px}
 @media(max-width:620px){.build-section{padding-bottom:32px}.footer{padding-bottom:24px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.button:hover{transform:none}}
+
+/* Narration-synced summaries complement the full-width recording. */
+.demo-player video{max-height:none;aspect-ratio:16/9}
+.demo-commentary{border-top:1px solid var(--line);padding:18px 22px 20px;min-height:128px}
+.demo-commentary .summary-heading{display:flex;align-items:baseline;gap:16px;margin-bottom:5px}
+.demo-commentary .phase{color:var(--mint);font:11px/1.6 var(--mono);letter-spacing:.08em;white-space:nowrap}
+.demo-commentary .title{font-size:19px;font-weight:600;line-height:1.4;margin:0}
+.demo-commentary .body{font-size:15px;color:#b1c4bc;line-height:1.65;margin:0;max-width:1000px}
+@media(max-width:650px){.demo-commentary{padding:14px 12px;min-height:160px}.demo-commentary .summary-heading{display:block}.demo-commentary .title{font-size:17px;margin-top:4px}.demo-commentary .body{font-size:14px}}

@@ -54,9 +54,11 @@ if (showcase.videoSrc) {
   video.preload = 'metadata';
   video.hidden = false;
   poster.hidden = true;
+  document.getElementById('demo-commentary').hidden = false;
   status.textContent = 'RECORDED GAMEPLAY';
   document.getElementById('demo-caption-text').textContent = 'Recorded real Decider gameplay. Playback does not call a live model.';
   video.addEventListener('error', () => {
+    document.getElementById('demo-commentary').hidden = true;
     video.hidden = true;
     poster.hidden = false;
     status.textContent = 'RECORDING UNAVAILABLE';
@@ -69,4 +71,22 @@ for (const link of document.querySelectorAll('[data-repository-path]')) {
   const file = link.dataset.repositoryPath;
   const root = showcase.repositoryUrl.replace(/\/$/, '');
   link.href = file ? `${root}/blob/${encodeURIComponent(showcase.repositoryRef)}/${file}` : root;
+}
+
+// Keep summaries aligned when playing, seeking, or replaying the recording.
+{
+const summaries=[
+{at:0,phase:'MEET THE MODEL',title:'A small model. Every move matters.',body:'Strands Decider 2B is a small, open-source decision model from AWS.'},
+{at:10.88,phase:'HUMAN MODE',title:'You fly.',body:'Move left, stay, or right. Dodge falling hazards and aim for 500 points.'},
+{at:20.16,phase:'DECIDER MODE',title:'Decider takes the controls.',body:'The model receives the board state and possible move outcomes, then selects a movement tool.'},
+{at:29.04,phase:'FOLLOW THE DECISION',title:'See the choice. Follow the move.',body:'The panel shows the selected move, relative preferences, and request time. The game executes the action.'},
+{at:38,phase:'SHADOW MODE',title:'Your controls. An AI copilot.',body:'Decider suggests the next move. You can follow its advice or choose another direction.'},
+{at:46,phase:'BEDROCK RECAP',title:'Bedrock tells the story.',body:'Amazon Bedrock writes a short recap from the score and recent moves.'},
+{at:52,phase:'REUSABLE PATTERN',title:'Three options. One decision.',body:'Give the model context, a question, and fixed options. Your application acts on its choice.'},
+{at:58,phase:'YOUR NEXT MOVE',title:'Try it yourself.',body:'Run the game locally or deploy it in your AWS account. Source: github.com/elyas-syed/grid-dodger'}
+];
+let active=-1;
+function syncSummary(){let next=0;for(let i=1;i<summaries.length;i++){if(video.currentTime>=summaries[i].at)next=i;}if(next===active)return;active=next;const s=summaries[next];document.getElementById('commentary-phase').textContent=s.phase;document.getElementById('commentary-title').textContent=s.title;document.getElementById('commentary-body').textContent=s.body;}
+for(const event of ['timeupdate','seeked','loadedmetadata','ended'])video.addEventListener(event,syncSummary);
+syncSummary();
 }
