@@ -36,6 +36,9 @@ test('Pages artifact resolves its asset graph below a project prefix and exclude
   }
   const config = readFileSync(path.join(site, 'showcase-config.mjs'), 'utf8');
   assert.match(config, /repositoryRef: 'main'/);
+  assert.match(html, /landing\.js\?v=[a-f0-9]{12}/);
+  assert.match(readFileSync(path.join(site, 'landing.js'), 'utf8'), /showcase-config\.mjs\?v=[a-f0-9]{12}/);
+  assert.match(config, /grid-dodger-demo\.mp4\?v=[a-f0-9]{12}/);
   assert.match(config, /elyas-syed\/grid-dodger/);
   const allowed = new Set(['index.html', 'landing.css', 'landing.js', 'showcase-config.mjs', 'assets', 'media', 'game-assets', '.nojekyll']);
   for (const file of readdirSync(site)) assert.ok(allowed.has(file), `Unexpected published path ${file}`);

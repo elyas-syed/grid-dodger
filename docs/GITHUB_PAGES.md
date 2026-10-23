@@ -11,7 +11,7 @@ The project website is a static recorded showcase. Real Decider inference and Be
 3. The workflow installs Node dependencies, runs the Node and Lambda tests (including the static build check), builds `_site/`, and deploys it using GitHub's Pages actions.
 4. Open `https://elyas-syed.github.io/grid-dodger/` and check artwork, navigation, repository links, video playback/seek/replay, and mobile layout while signed out.
 
-All page-local paths are relative, so the project prefix `/grid-dodger/` works without a custom domain or root-relative asset paths. The player uses native controls, metadata preload, a poster, and no autoplay.
+The build fingerprints the entry script, config module, stylesheet and video URL to prevent cached configuration from selecting an older recording. All page-local paths are relative, so the project prefix `/grid-dodger/` works without a custom domain or root-relative asset paths. The player uses native controls, metadata preload, a poster, and no autoplay.
 
 ## Change the recording
 
