@@ -32,7 +32,7 @@ The default 0.40 option-probability threshold can substitute **stay**; that fall
 
 ## Recorded showcase and AWS deployment
 
-The [GitHub Pages website](https://elyas-syed.github.io/grid-dodger/) serves a **60-second recording of real AWS gameplay**, with explanatory text cards and game audio. Watching it makes no inference requests. The temporary recording infrastructure was removed on October 18, 2026; there is no always-on hosted game.
+The [GitHub Pages website](https://elyas-syed.github.io/grid-dodger/) serves a **approximately 80-second recording of real AWS gameplay with audio**. Watching it makes no inference requests. The temporary recording infrastructure was removed on October 18, 2026; there is no always-on hosted game.
 
 You can [deploy the full reference stack in your own AWS account](terraform/README.md). It uses CloudFront/S3, ECS on GPU-backed EC2, ECR/CodeBuild, and API Gateway/Lambda/Bedrock. The historical always-on estimate is **about $14/day or $425–430 per 730-hour month**, before credits/tax; builds and usage are additional. [Assumptions and breakdown](docs/COSTS.md).
 

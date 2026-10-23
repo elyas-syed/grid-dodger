@@ -1,6 +1,6 @@
 # Public release validation — October 23, 2026
 
-The clean source export passed **68 Node tests and 7 Lambda tests (75 total)**, including a static Pages build/asset-graph check under a project URL prefix. Local browser review confirmed the recorded video loads as 60 seconds, plays with native controls, and the page has no horizontal overflow or broken visible images at desktop and 390-pixel phone widths. The static showcase makes no live inference calls.
+The clean source export passed **68 Node tests and 7 Lambda tests (75 total)**, including a static Pages build/asset-graph check under a project URL prefix. The initial release used a 60-second captioned draft; the owner then supplied an approximately 80-second replacement with audio (79.553 seconds, 1920 × 1080, 60 FPS). Decoded samples confirm non-silent audio. Local browser review of the initial release confirmed the recorded video loads correctly, plays with native controls, and the page has no horizontal overflow or broken visible images at desktop and 390-pixel phone widths. The static showcase makes no live inference calls.
 
 The original private project and recording stack were validated previously; this release does not claim a fresh CPU/CUDA install or a new live 500-point win. AWS was removed after recording. Existing historical evidence below is retained for context.
 
