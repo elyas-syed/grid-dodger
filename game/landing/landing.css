@@ -59,3 +59,12 @@
 .demo-commentary .title{font-size:19px;font-weight:600;line-height:1.4;margin:0}
 .demo-commentary .body{font-size:15px;color:#b1c4bc;line-height:1.65;margin:0;max-width:1000px}
 @media(max-width:650px){.demo-commentary{padding:14px 12px;min-height:160px}.demo-commentary .summary-heading{display:block}.demo-commentary .title{font-size:17px;margin-top:4px}.demo-commentary .body{font-size:14px}}
+
+/* Local setup action and reference running costs. */
+.build-actions .button-local{background:#261f13;color:var(--gold);border-color:#8b713d}
+.build-actions .button-local:hover{background:#382b16;border-color:var(--gold);color:var(--gold)}
+.build-cost-value>span{font-size:16px;display:inline-block;letter-spacing:0;line-height:1.5}
+.build-cost-local{color:var(--gold);font-size:32px;font-weight:500;line-height:1.4;margin-top:12px;letter-spacing:-.03em}
+.build-cost-local>span{font-size:16px;color:#d3c7ac;letter-spacing:0}
+
+.build-cost-value small{display:block;font-size:16px;font-weight:400;letter-spacing:0;color:#a4bbaa;margin-top:8px}
