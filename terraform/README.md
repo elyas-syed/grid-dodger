@@ -36,6 +36,8 @@ DECIDER_URL="https://YOUR_CLOUDFRONT_DOMAIN/decider" npm run test:live
 
 Use the current Terraform outputs. Never reuse a CloudFront domain from before a full teardown. `make sync-ui` generates the hosted launcher link from those outputs and uploads only game and source files, not documentation, benchmark reports, or the article.
 
+CloudFront serves the arcade at `/game/` and the showcase at `/game/landing/`. Both directory URLs resolve to their S3 `index.html` objects; `/game/landing` redirects to the trailing-slash URL so relative assets resolve correctly. Explicit `index.html` URLs also work.
+
 ## Updating
 
 - Frontend/browser modules: `make sync-ui`, wait for invalidation completion, reload the browser. Gameplay, difficulty, and decision-display changes do not need a Docker image rebuild.

@@ -13,6 +13,10 @@ const request = (url, opts = {}) =>
 for (const pathname of [
   "/game/",
   "/game/index.html",
+  "/game/landing/",
+  "/game/landing/index.html",
+  "/game/landing/landing.css",
+  "/game/landing/landing.js",
   "/game/styles.css",
   "/game/app.js",
   "/src/tool-selection.mjs",
@@ -28,6 +32,10 @@ for (const pathname of [
 const root = await request(base + "/", { redirect: "manual" });
 assert.equal(root.status, 302);
 assert.equal(root.headers.get("location"), "/game/index.html");
+const landing = await request(base + "/game/landing", { redirect: "manual" });
+assert.equal(landing.status, 302);
+assert.equal(landing.headers.get("location"), "/game/landing/");
+console.log("PASS landing directory redirect");
 const health = await (await request(base + "/decider/health")).json();
 assert.equal(health.device, "cuda");
 console.log("PASS CUDA health");

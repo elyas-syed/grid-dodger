@@ -18,7 +18,7 @@ resource "aws_cloudfront_function" "strip_decider_prefix" {
 resource "aws_cloudfront_function" "game_index" {
   name    = "${var.name_prefix}-game-index"
   runtime = "cloudfront-js-2.0"
-  comment = "Resolve the game directory to its S3 index object"
+  comment = "Resolve game and landing directories to their S3 index objects"
   publish = true
   code    = <<-EOF
     function handler(event) {
@@ -28,6 +28,12 @@ resource "aws_cloudfront_function" "game_index" {
       }
       if (request.uri === '/game/') {
         request.uri = '/game/index.html';
+      }
+      if (request.uri === '/game/landing') {
+        return { statusCode: 302, headers: { location: { value: '/game/landing/' } } };
+      }
+      if (request.uri === '/game/landing/') {
+        request.uri = '/game/landing/index.html';
       }
       return request;
     }
